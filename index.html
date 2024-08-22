@@ -36,73 +36,20 @@
   </head>
   <body>
     <div id="step1" class="step">
-      Select your SMS message:
-      <select id="select1">
-        <option value="">Select an option</option>
-        <option value="someMessage">Some SMS</option>
-        <option value="anotherMessage">Another SMS</option>
-        <option value="thirdMessage">Third SMS</option>
-        <option value="unknownMessage">Unknown SMS</option>
-      </select>
-
-      <button id="toggleLastStep">Toggle Last Step</button>
-    </div>
-    <div id="step2" class="step">
-      Here's a second page with some info on it.
-    </div>
-    <div id="step3" class="step">
-      You chose the message:
-      <div id="message"></div>
-    </div>
-    <div id="step4" class="step">
-      Hey, here's a fourth step, just for you. Toggle this on or off from step
-      1.
-    </div>
-  </body>
-</html>
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Configuração da Custom Activity</title>
-    <style>
-        /* Adicione seus estilos CSS aqui */
-        .field-list {
-            list-style: none;
-            padding: 0;
-        }
-    </style>
-    <script type="text/javascript" src="jquery.min.js"></script>
-    <script type="text/javascript" src="require.js"></script>
-    <script type="text/javascript">
-      (function () {
-        var config = {
-          baseUrl: "",
-        };
-
-        var dependencies = ["customActivity"];
-
-        require(config, dependencies);
-      })();
-    </script>
-
-
-</head>
-<body>
-    <div id="step1" class="step">
         <h1>Configuração da Custom Activity</h1>
 
         <label for="dataExtensionName">Nome da Data Extension:</label>
         <input type="text" id="dataExtensionName" name="dataExtensionName" required>
         <button id="carregarCampos">Carregar Campos</button>
+
+      <button id="toggleLastStep">Toggle Last Step</button>
     </div>
     <div id="step2" class="step">
-        <div>
-            <h2>Campos Disponíveis</h2>
-            <ul id="availableFields" class="field-list"></ul>         
-        </div>
-        <h2>Campos Selecionados</h2>
-        <ul id="selectedFields" class="field-list"></ul>
+        <h2>Campos Disponíveis</h2>
+        <ul id="availableFields" class="field-list"></ul>         
+    
+    <h2>Campos Selecionados</h2>
+    <ul id="selectedFields" class="field-list"></ul>
     </div>
     <div id="step3" class="step">
         <label for="endpoint">Endpoint:</label>
@@ -112,7 +59,10 @@
         <input type="text" id="apiKey" name="apiKey" required>
 
         <button id="salvar">Salvar e Executar</button>
+      <div id="message"></div>
     </div>
-    <script src="customActivity.js"></script>
-</body>
-</html> -->
+    <div id="step4" class="step">
+      Finish!
+    </div>
+  </body>
+</html>
