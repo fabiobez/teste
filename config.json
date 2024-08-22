@@ -1,7 +1,7 @@
 {
     "workflowApiVersion": "1.1",
     "metaData": {
-      "icon": "images/sms.png",
+      "icon": "images/icon_journeyBuilder-event-api-blue.svg",
       "category": "message"
     },
     "type": "REST",
