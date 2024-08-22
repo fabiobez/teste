@@ -1,14 +1,14 @@
 {
     "workflowApiVersion": "1.1",
     "metaData": {
-      "icon": "images/icon_journeyBuilder-event-api-blue.svg",
+      "icon": "images/sms.png",
       "category": "message"
     },
     "type": "REST",
     "lang": {
       "en-US": {
-        "name": "Enviar para API",
-        "description": "Enviar dados para uma API específica"
+        "name": "REST Activity (Workflow API v1.1)",
+        "description": "An example REST activity using workflow API v1.1 format."
       }
     },
     "arguments": {

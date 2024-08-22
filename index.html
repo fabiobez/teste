@@ -1,61 +1,22 @@
 <!DOCTYPE html>
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Custom Journey Builder Activity</title>
-
-    <script type="text/javascript" src="jquery.min.js"></script>
-    <script type="text/javascript" src="require.js"></script>
-    <script type="text/javascript">
-      (function () {
-        var config = {
-          baseUrl: "",
-        };
-
-        var dependencies = ["customActivity"];
-
-        require(config, dependencies);
-      })();
-    </script>
-
-    <!--Styles-->
-    <style type="text/css">
-      body {
-        padding: 20px;
-        margin: 0;
-      }
-      .step {
-        display: none;
-      }
-      #step1 {
-        display: block;
-      }
+<html>
+<head>
+    <title>Consulta de Campos de Data Extension</title>
+    <style>
+        /* Adicione seus estilos CSS aqui */
     </style>
-  </head>
-  <body>
-    <div id="step1" class="step">
-      Select your SMS message:
-      <select id="select1">
-        <option value="">Select an option</option>
-        <option value="someMessage">Some SMS</option>
-        <option value="anotherMessage">Another SMS</option>
-        <option value="thirdMessage">Third SMS</option>
-        <option value="unknownMessage">Unknown SMS</option>
-      </select>
+</head>
+<body>
+    <h1>Consulta de Campos de Data Extension</h1>
 
-      <button id="toggleLastStep">Toggle Last Step</button>
-    </div>
-    <div id="step2" class="step">
-      Here's a second page with some info on it.
-    </div>
-    <div id="step3" class="step">
-      You chose the message:
-      <div id="message"></div>
-    </div>
-    <div id="step4" class="step">
-      Hey, here's a fourth step, just for you. Toggle this on or off from step
-      1.
-    </div>
-  </body>
+    <label for="dataExtensionName">Nome da Data Extension:</label>
+    <input type="text" id="dataExtensionName" name="dataExtensionName" required>
+
+    <button id="carregarCampos">Carregar Campos</button>
+
+    <select id="fields" name="fields" multiple>
+        </select>
+
+    <script src="customActivity.js"></script>
+</body>
 </html>
