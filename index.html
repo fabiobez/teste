@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Send To API</title>
+    <title>Configuração da Custom Activity</title>
     <style>
         /* Adicione seus estilos CSS aqui */
+        .field-list {
+            list-style: none;
+            padding: 0;
+        }
     </style>
 </head>
 <body>
-    <h1>Send To API</h1>
+    <h1>Configuração da Custom Activity</h1>
 
     <label for="dataExtensionName">Nome da Data Extension:</label>
     <input type="text" id="dataExtensionName" name="dataExtensionName" required>
     <button id="carregarCampos">Carregar Campos</button>
-    <select id="fields" name="fields" multiple>
-        </select>
+
+    <div>
+        <h2>Campos Disponíveis</h2>
+        <ul id="availableFields" class="field-list"></ul>
+    </div>
+    <div>
+        <h2>Campos Selecionados</h2>
+        <ul id="selectedFields" class="field-list"></ul>
+    </div>
+
+    <label for="endpoint">Endpoint:</label>
+    <input type="text" id="endpoint" name="endpoint" required>
+
+    <label for="apiKey">API Key:</label>
+    <input type="text" id="apiKey" name="apiKey" required>
+
+    <button id="salvar">Salvar e Executar</button>
 
     <script src="customActivity.js"></script>
 </body>
