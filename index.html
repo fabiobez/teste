@@ -11,29 +11,30 @@
     </style>
 </head>
 <body>
-    <h1>Configuração da Custom Activity</h1>
+    <div id="step1" class="step">
+        <h1>Configuração da Custom Activity</h1>
 
-    <label for="dataExtensionName">Nome da Data Extension:</label>
-    <input type="text" id="dataExtensionName" name="dataExtensionName" required>
-    <button id="carregarCampos">Carregar Campos</button>
-
-    <div>
-        <h2>Campos Disponíveis</h2>
-        <ul id="availableFields" class="field-list"></ul>
+        <label for="dataExtensionName">Nome da Data Extension:</label>
+        <input type="text" id="dataExtensionName" name="dataExtensionName" required>
+        <button id="carregarCampos">Carregar Campos</button>
     </div>
-    <div>
+    <div id="step2" class="step">
+        <div>
+            <h2>Campos Disponíveis</h2>
+            <ul id="availableFields" class="field-list"></ul>         
+        </div>
         <h2>Campos Selecionados</h2>
         <ul id="selectedFields" class="field-list"></ul>
     </div>
+    <div id="step3" class="step">
+        <label for="endpoint">Endpoint:</label>
+        <input type="text" id="endpoint" name="endpoint" required>
 
-    <label for="endpoint">Endpoint:</label>
-    <input type="text" id="endpoint" name="endpoint" required>
+        <label for="apiKey">API Key:</label>
+        <input type="text" id="apiKey" name="apiKey" required>
 
-    <label for="apiKey">API Key:</label>
-    <input type="text" id="apiKey" name="apiKey" required>
-
-    <button id="salvar">Salvar e Executar</button>
-
+        <button id="salvar">Salvar e Executar</button>
+    </div>
     <script src="customActivity.js"></script>
 </body>
 </html>
