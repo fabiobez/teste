@@ -34,7 +34,7 @@
       "url": "URI/for/your/activity/save"
     },
     "publish": {
-      "url": "URI/for/your/activity/publish"
+      "url": "https://reqbin.com/echo/post/json"
     },
     "validate": {
       "url": "URI/for/your/activity/validate"
