@@ -1,4 +1,6 @@
-define(['postmonger'], function(postmonger) {
+define(["postmonger"], function (Postmonger) {
+    "use strict";
+    
     var connection = new Postmonger.Session();
     var payload = {};
     var lastStepEnabled = false;
