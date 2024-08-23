@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -8,6 +7,7 @@
 
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="require.js"></script>
+    <script type="text/javascript" src="postmonge.js"></script>
     <script type="text/javascript">
       (function () {
         var config = {
@@ -35,20 +35,28 @@
     </style>
   </head>
   <body>
-            <h1>Configuração da Custom Activity</h1>
-        <label for="dataExtensionName">Nome da Data Extension:</label>
-        <input type="text" id="dataExtensionName" name="dataExtensionName" required>
-        <button id="carregarCampos">Carregar Campos</button>
-        <h2>Campos Disponíveis</h2>
-        <ul id="availableFields" class="field-list"></ul>
-        <h2>Campos Selecionados</h2>
-        <ul id="selectedFields" class="field-list"></ul>
-        <label for="endpoint">Endpoint:</label>
-        <input type="text" id="endpoint" name="endpoint" required>
+    <div id="step1" class="step">
+      Select your SMS message:
+      <select id="select1">
+        <option value="">Select an option</option>
+        <option value="someMessage">Some SMS</option>
+        <option value="anotherMessage">Another SMS</option>
+        <option value="thirdMessage">Third SMS</option>
+        <option value="unknownMessage">Unknown SMS</option>
+      </select>
 
-        <label for="apiKey">API Key:</label>
-        <input type="text" id="apiKey" name="apiKey" required>
-
-        <button id="salvar">Salvar e Executar</button>
+      <button id="toggleLastStep">Toggle Last Step</button>
+    </div>
+    <div id="step2" class="step">
+      Here's a second page with some info on it.
+    </div>
+    <div id="step3" class="step">
+      You chose the message:
       <div id="message"></div>
+    </div>
+    <div id="step4" class="step">
+      Hey, here's a fourth step, just for you. Toggle this on or off from step
+      1.
+    </div>
+  </body>
 </html>

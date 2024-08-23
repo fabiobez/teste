@@ -1,87 +1,90 @@
 {
-    "workflowApiVersion": "1.1",
-    "metaData": {
-      "icon": "images/icon_journeyBuilder-event-api-blue.svg",
-      "category": "custom"
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "images/sms.png",
+    "category": "message"
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "REST Activity (Workflow API v1.1)",
+      "description": "An example REST activity using workflow API v1.1 format."
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [
+        {
+          "emailAddress": "{{InteractionDefaults.Email}}"
+        },
+        {
+          "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+        }
+      ],
+      "outArguments": [
+        {
+          "foundSignupDate": ""
+        }
+      ],
+      "url": "https://reqbin.com/echo/post/json"
+    }
+  },
+  "configurationArguments": {
+    "save": {
+      "url": "URI/for/your/activity/save"
     },
-    "type": "REST",
-    "lang": {
-      "pt-BR": {
-        "name": "Enviar para API",
-        "description": "Envia dados para uma API definida"
-      }
+    "publish": {
+      "url": "URI/for/your/activity/publish"
     },
+    "validate": {
+      "url": "URI/for/your/activity/validate"
+    },
+    "stop": {
+      "url": "URI/for/your/activity/stop"
+    }
+  },
+  "wizardSteps": [
+    { "label": "Step 1", "key": "step1" },
+    { "label": "Step 2", "key": "step2" },
+    { "label": "Step 3", "key": "step3" },
+    { "label": "Step 4", "key": "step4", "active": false }
+  ],
+  "userInterfaces": {
+    "configModal": {
+      "height": 200,
+      "width": 300,
+      "fullscreen": true
+    }
+  },
+  "schema": {
     "arguments": {
       "execute": {
         "inArguments": [
           {
-            "emailAddress": "{{InteractionDefaults.Email}}"
+            "phoneNumber": {
+              "dataType": "Phone",
+              "isNullable": false,
+              "direction": "in"
+            }
           },
           {
-            "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+            "emailAddress": {
+              "dataType": "Email",
+              "isNullable": false,
+              "direction": "in"
+            }
           }
         ],
         "outArguments": [
           {
-            "foundSignupDate": ""
+            "foundSignupDate": {
+              "dataType": "Date",
+              "direction": "out",
+              "access": "visible"
+            }
           }
-        ],
-        "url": "https://reqbin.com/echo/post/json"
-      }
-    },
-    "configurationArguments": {
-      "save": {
-        "url": "URI/for/your/activity/save"
-      },
-      "publish": {
-        "url": "URI/for/your/activity/publish"
-      },
-      "validate": {
-        "url": "URI/for/your/activity/validate"
-      },
-      "stop": {
-        "url": "URI/for/your/activity/stop"
-      }
-    },
-    "wizardSteps": [
-      { "label": "Step 1", "key": "step1" }
-    ],
-    "userInterfaces": {
-      "configModal": {
-        "height": 200,
-        "width": 300,
-        "fullscreen": true
-      }
-    },
-    "schema": {
-      "arguments": {
-        "execute": {
-          "inArguments": [
-            {
-              "phoneNumber": {
-                "dataType": "Phone",
-                "isNullable": false,
-                "direction": "in"
-              }
-            },
-            {
-              "emailAddress": {
-                "dataType": "Email",
-                "isNullable": false,
-                "direction": "in"
-              }
-            }
-          ],
-          "outArguments": [
-            {
-              "foundSignupDate": {
-                "dataType": "Date",
-                "direction": "out",
-                "access": "visible"
-              }
-            }
-          ]
-        }
+        ]
       }
     }
   }
+}
