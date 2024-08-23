@@ -1,6 +1,6 @@
 define(['postmonger'], function(postmonger) {
   var connection = new postmonger.connections.dynamic(
-      /* Configuration */
+      /* Configurations */
   );
 
   // Quando o botão "Enviar" é clicado, coletamos os dados da UI e enviamos para o AMPScript
