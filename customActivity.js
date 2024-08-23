@@ -31,7 +31,8 @@ define(["postmonger"], function (Postmonger) {
 
 
     function initialize(data) {
-        var message = "Hello world";
+        let message = document.getElementById("message");
+        message.textContent = "Hello world";
     }
 
 
