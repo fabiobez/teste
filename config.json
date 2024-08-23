@@ -2,13 +2,13 @@
     "workflowApiVersion": "1.1",
     "metaData": {
       "icon": "images/icon_journeyBuilder-event-api-blue.svg",
-      "category": "message"
+      "category": "custom"
     },
     "type": "REST",
     "lang": {
-      "en-US": {
-        "name": "Send To API",
-        "description": "Send data to API"
+      "pt-BR": {
+        "name": "Enviar para API",
+        "description": "Envia dados para uma API definida"
       }
     },
     "arguments": {
@@ -26,7 +26,7 @@
             "foundSignupDate": ""
           }
         ],
-        "url": "https://fabiobez.github.io/teste/execute"
+        "url": "https://reqbin.com/echo/post/json"
       }
     },
     "configurationArguments": {
