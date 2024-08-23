@@ -7,13 +7,7 @@ define(["postmonger"], function (Postmonger) {
 
     $(window).ready(onRender);
   
-    connection.on("initActivity", initialize);
-    connection.on("requestedTokens", onGetTokens);
-    connection.on("requestedEndpoints", onGetEndpoints);
-  
-    connection.on("clickedNext", onClickedNext);
-    connection.on("clickedBack", onClickedBack);
-    connection.on("gotoStep", onGotoStep);
+    connection.on("initActivity", initialize);    
   
     function onRender() {
       // JB will respond the first time 'ready' is called with 'initActivity'
