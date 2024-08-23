@@ -31,7 +31,7 @@ define(["postmonger"], function (Postmonger) {
 
 
     function initialize(data) {
-        message = "Hello world";
+        var message = "Hello world";
     }
 
 
