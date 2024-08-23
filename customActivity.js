@@ -1,6 +1,6 @@
 define(["postmonger"], function (Postmonger) {
     "use strict";
-    
+
     var connection = new Postmonger.Session();
     var payload = {};
     var lastStepEnabled = false;
@@ -33,6 +33,11 @@ define(["postmonger"], function (Postmonger) {
         $("#message").html(message);
       });  
 
+    }
+
+
+    function initialize(data) {
+        message = "Hello world";
     }
 
 
