@@ -3,7 +3,7 @@ function moverParaDireita() {
     const listaDireita = document.getElementById('listaDireita');
 
     // Percorre todas as opções selecionadas na lista da esquerda
-    for (let i = 0; i < listaEsquerda.selectedOptions; i++) {
+    for (let i = 0; i < listaEsquerda.options.length; i++) {
         if (listaEsquerda.options[i].selected) {
             // Cria uma nova opção na lista da direita com o mesmo valor e texto
             const novaOpcao = document.createElement('option');
