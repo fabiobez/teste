@@ -12,17 +12,22 @@
     }
   },
   "arguments": {
-    "execute": {
-        "inArguments":[],
-        "outArguments": [],
-        "url": "https://reqbin.com/echo/post/json/",
-        "verb": "POST",
-        "body": "{\"de\": \"SurveyURLs\",\"emailKey\": \"demo@company.com\",\"surveyId\": \"SV_cWUnMW\",\"firstName\": \"Jane\",\"lastName\": \"Smith\"}",
-        "headers": "{\"x-api-key\": \"xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx\"}",
-        "timeout": 20000,
-        "retryCount": 5,
-        "retryDelay": 10000
-    }
+"execute": {
+  "inArguments": [
+  "first_name": "{{Event.Entry-event-key.first_name}}",
+  "last_name": "{{Event.Entry-event-key.last_name}}",
+  "company": "{{Event.Entry-event-key.company}}",
+  "email": ""{{Event.Entry-event-key.email}}""
+  ],
+  "outArguments": [],
+  "url": "postbin endpoint url",
+  "verb": "POST",
+  "body": "",
+  "header": "",
+  "format": "json",
+  "useJwt": false,
+  "timeout": 10000
+}
 },
   "configurationArguments": {
     "save": {
