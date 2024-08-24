@@ -1,6 +1,5 @@
 function moverParaDireita() {
-    
-    const listaEsquerda = document.getElementById('listaEsquerda');
+    const listaEsquerda = document.getElementById('idfield');
     const listaDireita = document.getElementById('listaDireita');
 
     // Percorre todas as opções selecionadas na lista da esquerda
@@ -21,5 +20,23 @@ function moverParaDireita() {
 }
 
 function moverParaEsquerda() {
-    // Lógica similar para mover da direita para a esquerda, com as operações invertidas
+    const listaEsquerda = document.getElementById('idfield');
+    const listaDireita = document.getElementById('listaDireita');
+
+    // Percorre todas as opções selecionadas na lista da esquerda
+    for (let i = 0; i < listaDireita.options.length; i++) {
+        if (listaDireita.options[i].selected) {
+            // Cria uma nova opção na lista da direita com o mesmo valor e texto
+            const novaOpcao = document.createElement('option');
+            novaOpcao.value = listaDireita.options[i].value;
+            novaOpcao.text = listaDireita.options[i].text;
+            listaEsquerda.add(novaOpcao);
+
+            // Remove a opção da lista da esquerda
+            listaDireita.remove(i);
+            // Ajusta o índice para não pular elementos após a remoção
+            i--;
+        }
+    }
+
 }
