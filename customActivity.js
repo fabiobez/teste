@@ -8,6 +8,7 @@ define(["postmonger"], function (Postmonger) {
         // initialize to the same value as what's set in config.json for consistency
         { label: "Definir Atributos", key: "step1" },
         { label: "Definir Endpoint", key: "step2" },  
+        { label: "Salvar Definições", key: "step3" },
         ];
       var currentStep = steps[0].key;
     
