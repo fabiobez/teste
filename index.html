@@ -36,9 +36,17 @@
   </head>
   <body>
     <div id="step1" class="step">
-      Definir Atributos
-      <select class="slds-select" id="idField" multiple></select>
-     
+      Selecione os atributos desejados:</div>
+      <select class="slds-select" id="idField" multiple></select> 
+      <div>
+        <button onclick="moverParaDireita()">>></button>
+        <button onclick="moverParaEsquerda()"><<</button>
+    </div>
+    <div>
+        <h3>Lista de Opções Selecionadas</h3>
+        <select id="listaDireita" multiple>
+        </select>
+    </div>    
     </div>
     <div id="step2" class="step">
       Definir Endpoint:
