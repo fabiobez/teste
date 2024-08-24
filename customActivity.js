@@ -3,7 +3,7 @@ define(["postmonger"], function (Postmonger) {
 
     var connection = new Postmonger.Session();
     var payload = {};
-    var dataextension;
+    var dataextension = "xxx";
     var steps = [
         // initialize to the same value as what's set in config.json for consistency
         { label: "Definir Atributos", key: "step1" },
