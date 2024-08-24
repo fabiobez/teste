@@ -27,7 +27,6 @@ define(["postmonger"], function (Postmonger) {
 
     }
 
-
     function initialize(data) {
         $('#step1').show();
         if (data) {
@@ -60,9 +59,7 @@ define(["postmonger"], function (Postmonger) {
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);
     
-    }   
-
-    
+    } 
     
     function onClickedBack() {
         connection.trigger("prevStep");
