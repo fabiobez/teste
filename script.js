@@ -4,6 +4,7 @@ function moverParaDireita() {
 
     var selectedOpts = $("#idField option:selected");
     console.log(selectedOpts);
+    console.log(listaEsquerda);
 
     // Percorre todas as opções selecionadas na lista da esquerda
     for (let iop = 0; iop < listaEsquerda.options.length; iop++) {
