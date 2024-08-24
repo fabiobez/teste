@@ -28,33 +28,29 @@ define(["postmonger"], function (Postmonger) {
             eventDefinitionKey = eventDefinitionModel.eventDefinitionKey;
         }
     });
-
-    function onRequest(request) {
-        // Verifica se o request contém a eventDefinition
-        if (request.payload && request.payload.eventDefinition) {
-          const eventDefinition = request.payload.eventDefinition;
-          var fieldname;
-      
-          // Itera sobre os campos da eventDefinition
-          for (const field in eventDefinition.fields) {
-            if (eventDefinition.fields.hasOwnProperty(field)) {
-              const fieldValue = eventDefinition.fields[field].value;
-              fieldname = field, fieldValue;
-             //console.log(field, fieldValue); // Exemplo de como usar o valor do campo
-      
-              // Aqui você pode adicionar sua lógica para processar os campos
-              // Por exemplo, armazenar os valores em um objeto, enviar para um servidor, etc.
-            }
-          }
-        }
-      }
     
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
-        connection.trigger("ready");
-    
+        connection.trigger("ready");    
         connection.trigger("requestTokens");
         connection.trigger("requestEndpoints");
+
+        if (request.payload && request.payload.eventDefinition) {
+            const eventDefinition = request.payload.eventDefinition;
+            var fieldname;
+        
+            // Itera sobre os campos da eventDefinition
+            for (const field in eventDefinition.fields) {
+              if (eventDefinition.fields.hasOwnProperty(field)) {
+                const fieldValue = eventDefinition.fields[field].value;
+                fieldname = field, fieldValue;
+                console.log(field, fieldValue); // Exemplo de como usar o valor do campo
+        
+                // Aqui você pode adicionar sua lógica para processar os campos
+                // Por exemplo, armazenar os valores em um objeto, enviar para um servidor, etc.
+              }
+            }
+          }
     
         // Disable the next button if a value isn't selected
         $("#select1").change(function () {
