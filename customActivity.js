@@ -33,12 +33,14 @@ define(["postmonger"], function (Postmonger) {
         // Verifica se o request contém a eventDefinition
         if (request.payload && request.payload.eventDefinition) {
           const eventDefinition = request.payload.eventDefinition;
+          var fieldname;
       
           // Itera sobre os campos da eventDefinition
           for (const field in eventDefinition.fields) {
             if (eventDefinition.fields.hasOwnProperty(field)) {
               const fieldValue = eventDefinition.fields[field].value;
-              console.log(field, fieldValue); // Exemplo de como usar o valor do campo
+              fieldname = field, fieldValue;
+             //console.log(field, fieldValue); // Exemplo de como usar o valor do campo
       
               // Aqui você pode adicionar sua lógica para processar os campos
               // Por exemplo, armazenar os valores em um objeto, enviar para um servidor, etc.
