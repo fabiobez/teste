@@ -59,7 +59,7 @@ define(["postmonger"], function (Postmonger) {
       }
 
       function moverParaDireita() {
-        const listaEsquerda = document.getElementById('listaEsquerda');
+        const listaEsquerda = document.getElementById('idfield');
         const listaDireita = document.getElementById('listaDireita');
     
         // Percorre todas as opções selecionadas na lista da esquerda
