@@ -31,16 +31,16 @@
 },
   "configurationArguments": {
     "save": {
-      "url": "https://reqbin.com/echo/post"
+      "url": "https://reqbin.com/echo/post/json"
     },
     "publish": {
-      "url": "https://reqbin.com/echo/post"
+      "url": "https://reqbin.com/echo/post/json"
     },
     "validate": {
-      "url": "https://reqbin.com/echo/post"
+      "url": "https://reqbin.com/echo/post/json"
     },
     "stop": {
-      "url": "https://reqbin.com/echo/post"
+      "url": "https://reqbin.com/echo/post/json"
     }
   },
   "wizardSteps": [
