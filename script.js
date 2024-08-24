@@ -14,7 +14,7 @@ function moverParaDireita() {
             const novaOpcao = document.createElement('option');
             novaOpcao.value = selectedOpts[iop].value;
             novaOpcao.text = selectedOpts[iop].text;
-            listaDireita.add(novaOpcao);
+            listaDireita.add(selectedOpts);
 
             // Remove a opção da lista da esquerda
             listaEsquerda.remove(iop);
