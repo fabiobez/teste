@@ -36,10 +36,12 @@ define(["postmonger"], function (Postmonger) {
         connection.trigger('requestSchema');
         connection.on('requestedSchema', function(data) {
             const schema = data['schema'];
-    
+            console.log(schema);
+            var x;
+                
             for (var i = 0, l = schema.length; i < l; i++) {
                 let attr = schema[i].key;
-    
+                console.log(x = '<option id="/' + schema[i].key + '>' + schema[i].name + '</option>');
                 // populate select dropdown 
                 let option = $('<option></option>')
                     .attr('id', schema[i].key)
