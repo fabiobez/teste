@@ -33,7 +33,9 @@
       "retryCount": 1,
       "retryDelay": 1000,
       "concurrentRequests": 6,
-      "url": "https://example.com/execute",
+      "url": "https://reqbin.com/echo/post/json",
+      "verb": "POST",
+      "body": "",
       "securityOptions": {
         "securityType": "securityContext",
         "securityContextKey": "EXTERNAL_KEY"
@@ -42,28 +44,28 @@
   },
   "configurationArguments": {
     "save": {
-      "url": "https://example.com/save",
+      "url": "https://reqbin.com/echo/post/json",
       "securityOptions": {
         "securityType": "securityContext",
         "securityContextKey": "EXTERNAL_KEY"
       }
     },
     "publish": {
-      "url": "https://example.com/publish",
+      "url": "https://reqbin.com/echo/post/json",
       "securityOptions": {
         "securityType": "securityContext",
         "securityContextKey": "EXTERNAL_KEY"
       }
     },
     "validate": {
-      "url": "https://example.com/validate",
+      "url": "https://reqbin.com/echo/post/json",
       "securityOptions": {
         "securityType": "securityContext",
         "securityContextKey": "EXTERNAL_KEY"
       }
     },
     "stop": {
-      "url": "https://example.com/stop",
+      "url": "https://reqbin.com/echo/post/json",
       "securityOptions": {
         "securityType": "securityContext",
         "securityContextKey": "EXTERNAL_KEY"
@@ -88,13 +90,13 @@
   "userInterfaces": {
     "configModal": {
       "fullscreen": true,
-      "url": "configModal.html"
+      "url": "index.html"
     },
     "runningModal": {
-      "url": "runningModal.html"
+      "url": "index.html"
     },
     "runningHover": {
-      "url": "runningHover.html"
+      "url": "index.html"
     }
   },
   "schema": {
