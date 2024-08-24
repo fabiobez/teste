@@ -40,6 +40,7 @@ define(["postmonger"], function (Postmonger) {
             const eventDefinition = payload.eventDefinition;
             var fieldname;
             var dataextension = "xxx";
+            $("#dataextension").html(dataextension);
             var teste = payload;
         
             // Itera sobre os campos da eventDefinition
