@@ -19,15 +19,22 @@ define(["postmonger"], function (Postmonger) {
     
     function onRender() {
         connection.trigger('ready');
+
+        $('#select1').change(function() {
+            var name = $('#select1').find('option:selected').html();
+            console.log('PNR Field selected : ', name);
+        });
+
       }
 
 
       function initialize(data) {
 
+       $('#step1').show();
         if (data) {
-          payload = data;
+            payload = data;
         }
-      
+        
         connection.trigger('requestSchema');
         connection.on('requestedSchema', function (data) {
       
@@ -35,12 +42,16 @@ define(["postmonger"], function (Postmonger) {
           const schema = data['schema'];
       
           for (var i = 0, l = schema.length; i < l; i++) {
-              var inArg = {};
-              let attr = schema[i].key;
-              let keyIndex = attr.lastIndexOf('.') + 1;
-              inArg[attr.substring(keyIndex)] = '{{' + attr + '}}';
-              payload['arguments'].execute.inArguments.push(inArg);
-          }
+            let attr = schema[i].key;
+
+            // populate select dropdown 
+            let option = $('<option></option>')
+                .attr('id', schema[i].key)
+                .text(schema[i].name);
+
+            $('#idField').append(option);
+
+        }
         });
       
         let argArr = payload['arguments'].execute.inArguments;
@@ -49,14 +60,22 @@ define(["postmonger"], function (Postmonger) {
     
     
       function onClickedNext() {
-        if (
+
+        var idField = $('#idField').find('option:selected').html();
+    payload['arguments'].execute.inArguments.push({
+        idField: idField
+    })
+    payload['metaData'].isConfigured = true;
+    connection.trigger('updateActivity', payload);
+
+        /*if (
           (currentStep.key === "step2" && steps[2].active === false) ||
           currentStep.key === "step3"
         ) {
           save();
         } else {
           connection.trigger("nextStep");
-        }
+        }*/
       }
     
       function onClickedBack() {
