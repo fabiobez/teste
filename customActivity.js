@@ -158,9 +158,6 @@ define(["postmonger"], function (Postmonger) {
               });
             }
             break;
-          case "step4":
-            $("#step4").show();
-            break;
         }
       }
 
