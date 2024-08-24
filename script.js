@@ -6,7 +6,7 @@ function moverParaDireita() {
     console.log(selectedOpts);
 
     // Percorre todas as opções selecionadas na lista da esquerda
-    for (let iop = 0; iop < selectedOpts; iop++) {
+    for (let iop = 1; iop < selectedOpts; iop++) {
         if (selectedOpts[iop]) {
 
             console.log(selectedOpts[iop]);
