@@ -6,8 +6,8 @@ define(["postmonger"], function (Postmonger) {
     var dataextension;
     var steps = [
         // initialize to the same value as what's set in config.json for consistency
-        { label: "Definir Endpoint", key: "step1" },
-        { label: "Step 2", key: "step2" },  
+        { label: "Definir Atributos", key: "step1" },
+        { label: "Definir Endpoint", key: "step2" },  
         ];
       var currentStep = steps[0].key;
     
