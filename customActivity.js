@@ -39,7 +39,7 @@ define(["postmonger"], function (Postmonger) {
         $("#select1").change(function () {
           var message = getMessage();
           connection.trigger("updateButton", {
-            button: "next",
+            button: "Próximo",
             enabled: Boolean(message),
           });
     
