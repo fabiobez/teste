@@ -135,7 +135,7 @@ define(["postmonger"], function (Postmonger) {
             });
             connection.trigger("updateButton", {
               button: "next",
-              text: "Próximo",
+              text: "next",
               visible: true,
             });
             break;
