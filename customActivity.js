@@ -57,20 +57,8 @@ define(["postmonger"], function (Postmonger) {
               message = val;
             }
           });
-        });
-    
-        // If there is no message selected, disable the next button
-        if (!message) {
-          showStep(null, 1);
-          connection.trigger("updateButton", { button: "next", enabled: false });
-          // If there is a message, skip to the summary step
-        } else {
-          $("#select1")
-            .find("option[value=" + message + "]")
-            .attr("selected", "selected");
-          $("#message").html(message);
-          showStep(null, 3);
-        }
+        });    
+        
       }
 
     function save() {
