@@ -7,7 +7,7 @@ function moverParaDireita() {
 
     // Percorre todas as opções selecionadas na lista da esquerda
     for (let iop = 0; iop < listaEsquerda.selectedOptions; iop++) {
-        if (listaEsquerda.options[iop].selected) {
+        if (listaEsquerda[iop].selectedOptions) {
 
             console.log(listaEsquerda[iop].selectedOptions);
             // Cria uma nova opção na lista da direita com o mesmo valor e texto
