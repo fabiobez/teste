@@ -19,60 +19,21 @@ define(["postmonger"], function (Postmonger) {
     connection.on("clickedNext", onClickedNext);
     connection.on("clickedBack", onClickedBack); 
 
-
     
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
-        connection.trigger("ready");    
+        connection.trigger("ready");
+    
         connection.trigger("requestTokens");
         connection.trigger("requestEndpoints");
-
-        connection.on("requestedTriggerEventDefinition", function(
-            eventDefinitionModel
-        ) {
-            if (eventDefinitionModel) {
-                definition = eventDefinitionModel;
-                eventDefinitionKey = eventDefinitionModel.eventDefinitionKey;
-            }
-        });
-
-        if (payload && payload.eventDefinition) {
-            const eventDefinition = payload.eventDefinition;
-            var fieldname;
-
-            const mensagemElement = document.getElementById('mensagem');
-            const mensagem = "Hello, world!";
-            mensagemElement.textContent = mensagem;
-
-            var dataextension = "xxx";
-            $("#dataextension").html(dataextension);
-            var teste = payload;
-        
-            // Itera sobre os campos da eventDefinition
-            for (const field in eventDefinition.fields) {
-              if (eventDefinition.fields.hasOwnProperty(field)) {
-                const fieldValue = eventDefinition.fields[field].value;
-                fieldname = field, fieldValue;
-                console.log(field, fieldValue); // Exemplo de como usar o valor do campo
-        
-                // Aqui você pode adicionar sua lógica para processar os campos
-                // Por exemplo, armazenar os valores em um objeto, enviar para um servidor, etc.
-              }
-            }
-          }
     
-        // Disable the next button if a value isn't selected
-        $("#select1").change(function () {
-          var message = getMessage();
-          connection.trigger("updateButton", {
-            button: "Próximo",
-            enabled: Boolean(message),
-          });
+         var message = getMessage();
+          $("#message").html(message);       
     
-          $("#message").html(message);
-        });  
-  
+          //connection.trigger("updateSteps", steps);
+       
       }
+
 
       function initialize(data) {
         if (data) {
