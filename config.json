@@ -20,7 +20,7 @@
     "email": ""{{Event.Entry-event-key.email}}""
     ],
     "outArguments": [],
-    "url": "postbin endpoint url",
+    "url": "https://reqbin.com/echo/post/json",
     "verb": "POST",
     "body": "",
     "header": "",
