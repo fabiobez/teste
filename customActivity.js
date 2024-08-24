@@ -19,20 +19,22 @@ define(["postmonger"], function (Postmonger) {
     connection.on("clickedNext", onClickedNext);
     connection.on("clickedBack", onClickedBack); 
 
-    connection.on("requestedTriggerEventDefinition", function(
-        eventDefinitionModel
-    ) {
-        if (eventDefinitionModel) {
-            definition = eventDefinitionModel;
-            eventDefinitionKey = eventDefinitionModel.eventDefinitionKey;
-        }
-    });
+
     
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger("ready");    
         connection.trigger("requestTokens");
         connection.trigger("requestEndpoints");
+
+        connection.on("requestedTriggerEventDefinition", function(
+            eventDefinitionModel
+        ) {
+            if (eventDefinitionModel) {
+                definition = eventDefinitionModel;
+                eventDefinitionKey = eventDefinitionModel.eventDefinitionKey;
+            }
+        });
 
         if (request.payload && request.payload.eventDefinition) {
             const eventDefinition = request.payload.eventDefinition;
