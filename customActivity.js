@@ -2,7 +2,7 @@ define(["postmonger"], function (Postmonger) {
     "use strict";
 
     var connection = new Postmonger.Session();
-    payload['arguments'].execute.inArguments = [{
+    var payload['arguments'].execute.inArguments = [{
         "subscriberKey": "{{Contact.Key}}",
         "surveyID": surveyID,
         "de":de,
@@ -56,15 +56,9 @@ define(["postmonger"], function (Postmonger) {
         payload["arguments"].execute.inArguments = [{
             campaign_id: campaign_id,
             recipient: {
-                first_name: "{{Event." + eventDefinitionKey + '."first_name"}}',
-                last_name: "{{Event." + eventDefinitionKey + '."last_name"}}',
-                company: "{{Event." + eventDefinitionKey + '."company"}}',
-                email: "{{Event." + eventDefinitionKey + '."email"}}',
-                address_1: "{{Event." + eventDefinitionKey + '."address_1"}}',
-                city: "{{Event." + eventDefinitionKey + '."city"}}',
-                state: "{{Event." + eventDefinitionKey + '."state"}}',
-                postal_code: "{{Event." + eventDefinitionKey + '."postal_code"}}',
-                identifier: "{{Event." + eventDefinitionKey + '."identifier"}}'
+                name: "{{Event." + eventDefinitionKey + '."Nome"}}',
+                email: "{{Event." + eventDefinitionKey + '."Email"}}',
+                phone: "{{Event." + eventDefinitionKey + '."Telefone"}}'
             }
         }];
         payload["metaData"].isConfigured = true;
