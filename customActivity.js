@@ -37,7 +37,7 @@ define(["postmonger"], function (Postmonger) {
         connection.on('requestedSchema', function(data) {
             const schema = data['schema'];
     
-            for (var i = 0, l = schema.length; i < l; i++) {
+            for (var i = 1, l = schema.length; i < l; i++) {
                 let attr = schema[i].key;
     
                 // populate select dropdown 
