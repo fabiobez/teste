@@ -2,8 +2,7 @@ define(["postmonger"], function (Postmonger) {
     "use strict";
 
     var connection = new Postmonger.Session();
-    var payload = {};
-    var dataextension = "xxx";
+    var payload = {};    
     var steps = [
         // initialize to the same value as what's set in config.json for consistency
         { label: "Definir Atributos", key: "step1" },
@@ -38,6 +37,8 @@ define(["postmonger"], function (Postmonger) {
         if (request.payload && request.payload.eventDefinition) {
             const eventDefinition = request.payload.eventDefinition;
             var fieldname;
+            var dataextension = "xxx";
+            var teste = payload;
         
             // Itera sobre os campos da eventDefinition
             for (const field in eventDefinition.fields) {
