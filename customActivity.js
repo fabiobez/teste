@@ -29,34 +29,28 @@ define(["postmonger"], function (Postmonger) {
 
 
     function initialize(data) {
-
-       $('#step1').show();
+        $('#step1').show();
         if (data) {
             payload = data;
         }
-        
+    
         connection.trigger('requestSchema');
-        connection.on('requestedSchema', function (data) {
-      
-          // add entry source attributes as inArgs
-          const schema = data['schema'];
-      
-          for (var i = 0, l = schema.length; i < l; i++) {
-            let attr = schema[i].key;
-
-            // populate select dropdown 
-            let option = $('<option></option>')
-                .attr('id', schema[i].key)
-                .text(schema[i].name);
-
-            $('#idField').append(option);
-
-        }
+        connection.on('requestedSchema', function(data) {
+            const schema = data['schema'];
+    
+            for (var i = 0, l = schema.length; i < l; i++) {
+                let attr = schema[i].key;
+    
+                // populate select dropdown 
+                let option = $('<option></option>')
+                    .attr('id', schema[i].key)
+                    .text(schema[i].name);
+    
+                $('#idField').append(option);
+    
+            }
         });
-      
-        let argArr = payload['arguments'].execute.inArguments;
-      
-      }      
+    }         
 
 
     function moverParaDireita() {
