@@ -12,23 +12,23 @@
     }
   },
   "arguments": {
-  "execute": {
-    "inArguments": [
-    "first_name": "{{Event.Entry-event-key.first_name}}",
-    "last_name": "{{Event.Entry-event-key.last_name}}",
-    "company": "{{Event.Entry-event-key.company}}",
-    "email": ""{{Event.Entry-event-key.email}}""
-    ],
-    "outArguments": [],
-    "url": "https://reqbin.com/echo/post/json",
-    "verb": "POST",
-    "body": "",
-    "header": "",
-    "format": "json",
-    "useJwt": false,
-    "timeout": 10000
-  }
-},
+      "execute": {
+        "inArguments": [
+          {
+            "emailAddress": "{{InteractionDefaults.Email}}"
+          },
+          {
+            "phoneNumber": "{{Contact.Default.PhoneNumber}}"
+          }
+        ],
+        "outArguments": [
+          {
+            "foundSignupDate": ""
+          }
+        ],
+        "url": "https://some-endpoint.com/execute"
+      }
+    },
   "configurationArguments": {
     "save": {
       "url": "https://reqbin.com/echo/post/json"
