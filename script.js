@@ -2,6 +2,9 @@ function moverParaDireita() {
     const listaEsquerda = document.getElementById('idfield');
     const listaDireita = document.getElementById('listaDireita');
 
+    var selectedOpts = $("#idField option:selected");
+    console.log(selectedOpts);
+
     // Percorre todas as opções selecionadas na lista da esquerda
     for (let iop = 0; iop < listaEsquerda.options.length; iop++) {
         if (listaEsquerda.options[iop].selectedOptions) {
