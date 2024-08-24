@@ -12,8 +12,8 @@
       "name": "Enviar para API",
       "description": "Envia dados para uma API",
       "label1": "Definir Atributos",
-      "label2": "Definir Destino",
-      "label3": "Salvar"
+      "label2": "Definir Endpoint",
+      "label3": "Salvar Definiçõess"
     }
   },
   "arguments": {
