@@ -19,7 +19,7 @@
         "telefone": "{{Event.SendToAPI.Telefone}}"        
         ],
         "outArguments": [],
-        "url": "https://reqbin.com/echo/post/json",
+        "uri": "https://reqbin.com/echo/post/json",
         "verb": "POST",
         "body": "",
         "header": "",
