@@ -3,7 +3,7 @@ function moverParaDireita() {
     const listaDireita = document.getElementById('listaDireita');
 
     // Percorre todas as opções selecionadas na lista da esquerda
-    for (let iop = 0; i < listaEsquerda.options.length; iop++) {
+    for (let iop = 0; iop < listaEsquerda.options.length; iop++) {
         if (listaEsquerda.options[iop].selectedOptions) {
 
             console.log(listaEsquerda.options[iop]);
