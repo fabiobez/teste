@@ -30,13 +30,23 @@ define(["postmonger"], function (Postmonger) {
     
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
-        connection.trigger("ready");    
+        connection.trigger("ready");
+    
         connection.trigger("requestTokens");
-        connection.trigger("requestEndpoints");    
-        
-        
-      }
+        connection.trigger("requestEndpoints");
+    
+        // Disable the next button if a value isn't selected
+        $("#select1").change(function () {
+          var message = getMessage();
+          connection.trigger("updateButton", {
+            button: "next",
+            enabled: Boolean(message),
+          });
+    
+          $("#message").html(message);
+        });  
   
+      }
 
       function initialize(data) {
         if (data) {
@@ -65,7 +75,6 @@ define(["postmonger"], function (Postmonger) {
         
       }
 
-
       function onGetTokens(tokens) {
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
         // console.log(tokens);
@@ -78,8 +87,8 @@ define(["postmonger"], function (Postmonger) {
     
       function onClickedNext() {
         if (
-          (currentStep.key === "step3" && steps[3].active === false) ||
-          currentStep.key === "step4"
+          (currentStep.key === "step2" && steps[2].active === false) ||
+          currentStep.key === "step3"
         ) {
           save();
         } else {
@@ -90,6 +99,80 @@ define(["postmonger"], function (Postmonger) {
       function onClickedBack() {
         connection.trigger("prevStep");
       }
+
+      function onGotoStep(step) {
+        showStep(step);
+        connection.trigger("ready");
+      }
+    
+      function showStep(step, stepIndex) {
+        if (stepIndex && !step) {
+          step = steps[stepIndex - 1];
+        }
+    
+        currentStep = step;
+    
+        $(".step").hide();
+    
+        switch (currentStep.key) {
+          case "step1":
+            $("#step1").show();
+            connection.trigger("updateButton", {
+              button: "next",
+              enabled: Boolean(getMessage()),
+            });
+            connection.trigger("updateButton", {
+              button: "back",
+              visible: false,
+            });
+            break;
+          case "step2":
+            $("#step2").show();
+            connection.trigger("updateButton", {
+              button: "back",
+              visible: true,
+            });
+            connection.trigger("updateButton", {
+              button: "next",
+              text: "next",
+              visible: true,
+            });
+            break;
+          case "step3":
+            $("#step3").show();
+            connection.trigger("updateButton", {
+              button: "back",
+              visible: true,
+            });
+            if (lastStepEnabled) {
+              connection.trigger("updateButton", {
+                button: "next",
+                text: "next",
+                visible: true,
+              });
+            } else {
+              connection.trigger("updateButton", {
+                button: "next",
+                text: "done",
+                visible: true,
+              });
+            }
+            break;
+          case "step4":
+            $("#step4").show();
+            break;
+        }
+      }
+
+
+
+
+
+
+
+
+
+
 
     function save() {
         var campaign_id = $("#campaign_id").val();
