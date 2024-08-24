@@ -9,7 +9,7 @@ function moverParaDireita() {
     for (let iop = 0; iop < listaEsquerda.options.length; iop++) {
         if (listaEsquerda.options[iop].selected) {
 
-            console.log(listaEsquerda.options[iop]);
+            console.log(listaEsquerda.options[iop].selected);
             // Cria uma nova opção na lista da direita com o mesmo valor e texto
             const novaOpcao = document.createElement('option');
             novaOpcao.value = listaEsquerda.options[iop].value;
