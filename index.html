@@ -65,17 +65,21 @@
   </head>
   <body>
     <div id="step1" class="step">
-      Selecione os atributos desejados:</div>
-      <select class="slds-select" id="idField" multiple></select>        
-        <div class="subject-info-arrows text-center">
-        <button id="moveright" onclick="moverParaDireita()" value='>'>>></button><br />
-        <button id="moveleft" onclick="moverParaEsquerda()" value='<'><<</button><br />
-        </div>
+      Selecione os atributos desejados:
+      <select id="listaEsquerda" multiple>
+        <option>Fabio</option>
+      </select>
+      <!--  <select class="slds-select" id="idField" multiple></select> -->
     <div>
-        <h3>Atributos definidos:</h3>
-        <select id="listaDireita" multiple>
-          <option>teste</option>
-        </select>
+    <div class="subject-info-arrows text-center">
+      <button id="moveright" onclick="moverParaDireita()" value='>'>>></button><br />
+      <button id="moveleft" onclick="moverParaEsquerda()" value='<'><<</button><br />
+    </div>
+    <div>
+      <h3>Atributos definidos:</h3>
+      <select id="listaDireita" multiple>
+      <option>Bezerra</option>
+      </select>
     </div>    
     </div>
     <div id="step2" class="step">
