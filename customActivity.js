@@ -31,8 +31,8 @@ define(["postmonger"], function (Postmonger) {
             const mensagem = payload;
             mensagemElement.textContent = mensagem;
     
-         var message = getMessage();
-          $("#message").html(message);       
+        // var message = getMessage();
+         // $("#message").html(message);       
     
           //connection.trigger("updateSteps", steps);
        
