@@ -93,10 +93,10 @@
       "url": "index.html"
     },
     "runningModal": {
-      "url": "index.html"
+      "url": "step2.html"
     },
     "runningHover": {
-      "url": "index.html"
+      "url": "finish.html"
     }
   },
   "schema": {
