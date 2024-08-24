@@ -134,7 +134,7 @@ define(["postmonger"], function (Postmonger) {
             });
             connection.trigger("updateButton", {
               button: "next",
-              text: "next",
+              text: "Próximo",
               visible: true,
             });
             break;
@@ -147,13 +147,13 @@ define(["postmonger"], function (Postmonger) {
             if (lastStepEnabled) {
               connection.trigger("updateButton", {
                 button: "next",
-                text: "next",
+                text: "Próximo",
                 visible: true,
               });
             } else {
               connection.trigger("updateButton", {
                 button: "next",
-                text: "done",
+                text: "Finalizar",
                 visible: true,
               });
             }
