@@ -26,20 +26,10 @@ define(["postmonger"], function (Postmonger) {
     
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
-        connection.trigger("ready");
-    
+        connection.trigger("ready");    
         connection.trigger("requestTokens");
-        connection.trigger("requestEndpoints");
-    
-        // Disable the next button if a value isn't selected
-        $("#select1").change(function () {
-          var message = getMessage();
-          connection.trigger("updateButton", {
-            button: "next",
-            enabled: Boolean(message),
-          });
-    
-          $("#message").html(message);
+        connection.trigger("requestEndpoints");    
+        
         });  
   
       }
