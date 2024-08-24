@@ -2,6 +2,7 @@ define(["postmonger"], function (Postmonger) {
     "use strict";
 
     var connection = new Postmonger.Session();
+    var payload = {};
     var dataextension;
 
     connection.on("requestedTriggerEventDefinition", function(
