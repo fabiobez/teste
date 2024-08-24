@@ -2,7 +2,14 @@ define(["postmonger"], function (Postmonger) {
     "use strict";
 
     var connection = new Postmonger.Session();
-    var payload = {};
+    payload['arguments'].execute.inArguments = [{
+        "subscriberKey": "{{Contact.Key}}",
+        "surveyID": surveyID,
+        "de":de,
+        "firstName":"{{Event.AutomationAud-myInstance.firstName}}",
+        "lastName":"{{Event.AutomationAud-myInstance.lastName}}",
+        "accountID":"{{Event.AutomationAud-myInstance.accountID}}"
+      }];
     var lastStepEnabled = false;
 
     $(window).ready(onRender);
