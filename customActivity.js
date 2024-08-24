@@ -14,67 +14,39 @@ define(["postmonger"], function (Postmonger) {
       $(window).ready(onRender);
 
     connection.on("initActivity", initialize); 
-    connection.on("requestedTokens", onGetTokens);
-    connection.on("requestedEndpoints", onGetEndpoints);  
     connection.on("clickedNext", onClickedNext);
     connection.on("clickedBack", onClickedBack); 
-
     
     function onRender() {
-        // JB will respond the first time 'ready' is called with 'initActivity'
-        connection.trigger("ready");
-    
-        connection.trigger("requestTokens");
-        connection.trigger("requestEndpoints");
-
-        const mensagemElement = document.getElementById('mensagem');
-            const mensagem = payload;
-            mensagemElement.textContent = mensagem;
-    
-        // var message = getMessage();
-         // $("#message").html(message);       
-    
-          //connection.trigger("updateSteps", steps);
-       
+        connection.trigger('ready');
       }
 
 
       function initialize(data) {
+
         if (data) {
           payload = data;
         }
-    
-        var message;
-        var hasInArguments = Boolean(
-          payload["arguments"] &&
-            payload["arguments"].execute &&
-            payload["arguments"].execute.inArguments &&
-            payload["arguments"].execute.inArguments.length > 0
-        );
-    
-        var inArguments = hasInArguments
-          ? payload["arguments"].execute.inArguments
-          : {};
-    
-        $.each(inArguments, function (index, inArgument) {
-          $.each(inArgument, function (key, val) {
-            if (key === "message") {
-              message = val;
-            }
-          });
-        });    
-        
-      }
-
-      function onGetTokens(tokens) {
-        // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
-        // console.log(tokens);
+      
+        connection.trigger('requestSchema');
+        connection.on('requestedSchema', function (data) {
+      
+          // add entry source attributes as inArgs
+          const schema = data['schema'];
+      
+          for (var i = 0, l = schema.length; i < l; i++) {
+              var inArg = {};
+              let attr = schema[i].key;
+              let keyIndex = attr.lastIndexOf('.') + 1;
+              inArg[attr.substring(keyIndex)] = '{{' + attr + '}}';
+              payload['arguments'].execute.inArguments.push(inArg);
+          }
+        });
+      
+        let argArr = payload['arguments'].execute.inArguments;
+      
       }
     
-      function onGetEndpoints(endpoints) {
-        // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
-        // console.log(endpoints);
-      }
     
       function onClickedNext() {
         if (
@@ -145,27 +117,20 @@ define(["postmonger"], function (Postmonger) {
       }
 
 
-
-
-
-
-
-
-
-
-
     function save() {
-        var campaign_id = $("#campaign_id").val();
-        payload["arguments"].execute.inArguments = [{
-            campaign_id: campaign_id,
-            recipient: {
-                nome: "{{Event." + eventDefinitionKey + '."Nome"}}',
-                email: "{{Event." + eventDefinitionKey + '."Email"}}',
-                telefone: "{{Event." + eventDefinitionKey + '."Telefone"}}'                
-            }
-        }];
-        payload["metaData"].isConfigured = true;
-        connection.trigger("updateActivity", payload);
+       /* the following code is optional, but provides an example of 
+     how to append additional key/value pair(s) as inArguments, 
+     for example, a form field value from the custom activity html
+
+  var fieldVal = document.getElementById('your-field-id').value;
+  var keyObj = { InsertKeyName: fieldVal };
+  payload['arguments'].execute.inArguments.push(keyObj);
+
+  */
+
+  payload.metaData.isConfigured = true;
+  connection.trigger('updateActivity', payload);
+
     }
 
 });
