@@ -83,8 +83,7 @@
     },
     {
       "label": "label3",
-      "key": "step3",
-      "active": false
+      "key": "step3"
     }
   ],
   "userInterfaces": {
