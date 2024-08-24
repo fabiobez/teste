@@ -39,6 +39,11 @@ define(["postmonger"], function (Postmonger) {
         if (payload && payload.eventDefinition) {
             const eventDefinition = payload.eventDefinition;
             var fieldname;
+
+            const mensagemElement = document.getElementById('mensagem');
+            const mensagem = "Hello, world!";
+            mensagemElement.textContent = mensagem;
+
             var dataextension = "xxx";
             $("#dataextension").html(dataextension);
             var teste = payload;
