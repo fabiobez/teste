@@ -4,11 +4,11 @@ function moverParaDireita() {
 
     var selectedOpts = $("#idField option:selected");
     console.log(selectedOpts);
-    console.log(listaEsquerda);
+    console.log(listaEsquerda.selected);
 
     // Percorre todas as opções selecionadas na lista da esquerda
     for (let iop = 0; iop < listaEsquerda.options.length; iop++) {
-        if (listaEsquerda.options[iop].selectedOptions) {
+        if (listaEsquerda.options[iop].selected) {
 
             console.log(listaEsquerda.options[iop]);
             // Cria uma nova opção na lista da direita com o mesmo valor e texto
