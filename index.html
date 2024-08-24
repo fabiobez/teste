@@ -33,50 +33,34 @@
       #step1 {
         display: block;
       }
-      .subject-info-box-1,
-.subject-info-box-2 {
-    float: left;
-    width: 45%;
-    
-    select {
-        height: 200px;
-        padding: 0;
-
-        option {
-            padding: 4px 10px 4px 10px;
-        }
-
-        option:hover {
-            background: #EEEEEE;
-        }
-    }
-}
-
-.subject-info-arrows {
-    float: left;
-    width: 10%;
-
-    input {
-        width: 70%;
-        margin-bottom: 5px;
-    }
-}
+      .container {
+        display: flex; /* Torna o elemento pai um container flexbox */
+        justify-content: space-between; /* Distribui os itens com espaço entre eles */
+      }
+      
+      .box {
+        width: 30%; /* Define a largura de cada div */
+        border: 1px solid black;
+      }
     </style>
   </head>
   <body>
     <div id="step1" class="step">
-      Selecione os atributos desejados:<br />
-      <select class="slds-select" id="idField" multiple></select>
-    <div>
-    <div class="subject-info-arrows text-center">
-      <button id="moveright" onclick="moverParaDireita()" value='>'>>></button><br />
-      <button id="moveleft" onclick="moverParaEsquerda()" value='<'><<</button><br />
-    </div>
-    <div>
-      Atributos definidos:<br />
-      <select id="listaDireita" multiple>        
-      </select>
-    </div>    
+      <div class="container">
+        <div class="box">
+          Selecione os atributos desejados:<br />
+          <select class="slds-select" id="idField" multiple></select>
+        <div>
+        <div class="box">
+          <button id="moveright" onclick="moverParaDireita()" value='>'>>></button><br />
+          <button id="moveleft" onclick="moverParaEsquerda()" value='<'><<</button><br />
+        </div>
+        <div class="box">
+          Atributos definidos:<br />
+          <select id="listaDireita" multiple>        
+          </select>
+        </div>
+      </div>    
     </div>
     <div id="step2" class="step">
       Definir Endpoint:
