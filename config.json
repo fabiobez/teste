@@ -11,9 +11,9 @@
     "en-US": {
       "name": "Enviar para API",
       "description": "Envia dados para uma API",
-      "label1": "Localized Step 1",
-      "label2": "Localized Step 2",
-      "label3": "Localized Step 3"
+      "label1": "Definir Atributos",
+      "label2": "Definir Destino",
+      "label3": "Salvar"
     }
   },
   "arguments": {
