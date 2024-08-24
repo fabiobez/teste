@@ -37,7 +37,25 @@
   <body>
     <div id="step1" class="step">
       <div id="message"></div>
-      Data Extension:
+      <ul id="minhaLista"></ul>
+      <script>
+        // Supondo que o objeto 'data' já contém os dados da eventDefinition
+        const data = {
+          campo1: 'valor1',
+          campo2: 'valor2',
+          campo3: 'valor3'
+        };
+    
+        const lista = document.getElementById('minhaLista');
+    
+        for (const campo in data) {
+          if (data.hasOwnProperty(campo)) {
+            const itemLista = document.createElement('li');
+            itemLista.textContent = `${campo}: ${data[campo]}`;
+            lista.appendChild(itemLista);
+          }
+        }
+      </script>
 
       <div id="payload"></div>
      
