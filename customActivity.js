@@ -76,38 +76,48 @@ define(["postmonger"], function (Postmonger) {
     
     function moverParaEsquerda() {
             // Lógica similar para mover da direita para a esquerda, com as operações invertidas
+
+            // Percorre todas as opções selecionadas na lista da esquerda
+        for (let i = 0; i < listaDireita.options.length; i++) {
+            if (listaEsquerda.options[i].selected) {
+                // Cria uma nova opção na lista da direita com o mesmo valor e texto
+                const novaOpcao = document.createElement('option');
+                novaOpcao.value = listaDireita.options[i].value;
+                novaOpcao.text = listaDireita.options[i].text;
+                listaDireita.add(novaOpcao);
+    
+                // Remove a opção da lista da esquerda
+                listaDireita.remove(i);
+                // Ajusta o índice para não pular elementos após a remoção
+                i--;
+            }
+        }
     }
     
     
     function onClickedNext() {
-
         var idField = $('#idField').find('option:selected').html();
-    payload['arguments'].execute.inArguments.push({
-        idField: idField
-    })
-    payload['metaData'].isConfigured = true;
-    connection.trigger('updateActivity', payload);
-
-        /*if (
-          (currentStep.key === "step2" && steps[2].active === false) ||
-          currentStep.key === "step3"
-        ) {
-          save();
-        } else {
-          connection.trigger("nextStep");
-        }*/
-      }
+        payload['arguments'].execute.inArguments.push({
+            idField: idField
+        })
+        payload['metaData'].isConfigured = true;
+        connection.trigger('updateActivity', payload);
     
-      function onClickedBack() {
-        connection.trigger("prevStep");
-      }
+    }   
 
-      function onGotoStep(step) {
+    
+    
+    function onClickedBack() {
+        connection.trigger("prevStep");
+    }
+
+    function onGotoStep(step) {
         showStep(step);
         connection.trigger("ready");
-      }
+    }
     
-      function showStep(step, stepIndex) {
+    function showStep(step, stepIndex) {
+        
         if (stepIndex && !step) {
           step = steps[stepIndex - 1];
         }
@@ -153,23 +163,6 @@ define(["postmonger"], function (Postmonger) {
               });
             break;
         }
-      }
-
-
-    function save() {
-       /* the following code is optional, but provides an example of 
-     how to append additional key/value pair(s) as inArguments, 
-     for example, a form field value from the custom activity html
-
-  var fieldVal = document.getElementById('your-field-id').value;
-  var keyObj = { InsertKeyName: fieldVal };
-  payload['arguments'].execute.inArguments.push(keyObj);
-
-  */
-
-  payload.metaData.isConfigured = true;
-  connection.trigger('updateActivity', payload);
-
-        }
-
+    }    
+    
 });
