@@ -127,8 +127,7 @@ define(["postmonger"], function (Postmonger) {
       
         var fieldVal = document.getElementById('your-field-id').value;
         var keyObj = { InsertKeyName: fieldVal };
-        payload['arguments'].execute.inArguments.push(keyObj);
-      
+        payload['arguments'].execute.inArguments.push(keyObj);      
         */
       
         payload.metaData.isConfigured = true;
