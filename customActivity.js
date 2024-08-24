@@ -36,8 +36,8 @@ define(["postmonger"], function (Postmonger) {
             }
         });
 
-        if (request.payload && request.payload.eventDefinition) {
-            const eventDefinition = request.payload.eventDefinition;
+        if (payload && payload.eventDefinition) {
+            const eventDefinition = payload.eventDefinition;
             var fieldname;
             var dataextension = "xxx";
             var teste = payload;
