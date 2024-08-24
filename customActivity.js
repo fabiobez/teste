@@ -117,7 +117,7 @@ define(["postmonger"], function (Postmonger) {
     }
     
     function showStep(step, stepIndex) {
-        
+
         if (stepIndex && !step) {
           step = steps[stepIndex - 1];
         }
@@ -163,6 +163,23 @@ define(["postmonger"], function (Postmonger) {
               });
             break;
         }
-    }    
+    }
+    
+    function save() {
+
+        /* the following code is optional, but provides an example of 
+           how to append additional key/value pair(s) as inArguments, 
+           for example, a form field value from the custom activity html
+      
+        var fieldVal = document.getElementById('your-field-id').value;
+        var keyObj = { InsertKeyName: fieldVal };
+        payload['arguments'].execute.inArguments.push(keyObj);
+      
+        */
+      
+        payload.metaData.isConfigured = true;
+        connection.trigger('updateActivity', payload);
+      
+      }
     
 });
