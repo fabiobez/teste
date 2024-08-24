@@ -26,6 +26,10 @@ define(["postmonger"], function (Postmonger) {
     
         connection.trigger("requestTokens");
         connection.trigger("requestEndpoints");
+
+        const mensagemElement = document.getElementById('mensagem');
+            const mensagem = "Hello, world!";
+            mensagemElement.textContent = mensagem;
     
          var message = getMessage();
           $("#message").html(message);       
