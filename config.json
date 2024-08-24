@@ -73,19 +73,10 @@
     }
   },
   "wizardSteps": [
-    {
-      "label": "label1",
-      "key": "step1"
-    },
-    {
-      "label": "label2",
-      "key": "step2"
-    },
-    {
-      "label": "label3",
-      "key": "step3"
-    }
-  ],
+      { "label": "Step 1", "key": "step1" },
+      { "label": "Step 2", "key": "step2" },
+      { "label": "Step 3", "key": "step3", "active": false }      
+    ],
   "userInterfaces": {
     "configModal": {
       "fullscreen": true,
