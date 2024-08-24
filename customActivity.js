@@ -25,10 +25,10 @@ define(["postmonger"], function (Postmonger) {
             console.log('PNR Field selected : ', name);
         });
 
-      }
+    }
 
 
-      function initialize(data) {
+    function initialize(data) {
 
        $('#step1').show();
         if (data) {
@@ -56,9 +56,10 @@ define(["postmonger"], function (Postmonger) {
       
         let argArr = payload['arguments'].execute.inArguments;
       
-      }
+      }      
 
-      function moverParaDireita() {
+
+    function moverParaDireita() {
         const listaEsquerda = document.getElementById('idfield');
         const listaDireita = document.getElementById('listaDireita');
     
@@ -80,11 +81,11 @@ define(["postmonger"], function (Postmonger) {
     }
     
     function moverParaEsquerda() {
-        // Lógica similar para mover da direita para a esquerda, com as operações invertidas
+            // Lógica similar para mover da direita para a esquerda, com as operações invertidas
     }
     
     
-      function onClickedNext() {
+    function onClickedNext() {
 
         var idField = $('#idField').find('option:selected').html();
     payload['arguments'].execute.inArguments.push({
@@ -175,6 +176,6 @@ define(["postmonger"], function (Postmonger) {
   payload.metaData.isConfigured = true;
   connection.trigger('updateActivity', payload);
 
-    }
+        }
 
 });
