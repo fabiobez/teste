@@ -6,14 +6,14 @@ function moverParaDireita() {
     console.log(selectedOpts);
 
     // Percorre todas as opções selecionadas na lista da esquerda
-    for (let iop = 0; iop < listaEsquerda.options.length; iop++) {
+    for (let iop = 0; iop < listaEsquerda.selectedOptions; iop++) {
         if (listaEsquerda.options[iop].selected) {
 
-            console.log(listaEsquerda.options[iop].selected);
+            console.log(listaEsquerda[iop].selectedOptions);
             // Cria uma nova opção na lista da direita com o mesmo valor e texto
             const novaOpcao = document.createElement('option');
-            novaOpcao.value = listaEsquerda.options[iop].value;
-            novaOpcao.text = listaEsquerda.options[iop].text;
+            novaOpcao.value = listaEsquerda[iop].value;
+            novaOpcao.text = listaEsquerda[iop].text;
             listaDireita.add(novaOpcao);
 
             // Remove a opção da lista da esquerda
