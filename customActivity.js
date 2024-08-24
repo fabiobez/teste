@@ -30,8 +30,7 @@ define(["postmonger"], function (Postmonger) {
         connection.trigger("requestTokens");
         connection.trigger("requestEndpoints");    
         
-        });  
-  
+        
       }
   
 
