@@ -21,7 +21,7 @@ define(["postmonger"], function (Postmonger) {
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
       connection.trigger("ready");  
-  
+      
       // Disable the next button if a value isn't selected
       $("#listadireita").change(function () {
         var message = getMessage();
@@ -29,11 +29,11 @@ define(["postmonger"], function (Postmonger) {
           button: "next",
           enabled: Boolean(message),
         });
-  
+        console.log(message);
         $("#message").html(message);
       });
   
-      // Toggle step 4 active/inactive
+      
       // If inactive, wizard hides it and skips over it during navigation
       $("#toggleLastStep").click(function () {
         lastStepEnabled = !lastStepEnabled; // toggle status
