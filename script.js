@@ -8,8 +8,7 @@ function moverParaDireita() {
             // Cria uma nova opção na lista da direita com o mesmo valor e texto
             const novaOpcao = document.createElement('option');
             novaOpcao.value = listaEsquerda.options[i].value;
-            novaOpcao.text = listaEsquerda.options[i].text;
-            novaOpcao.selected = true;
+            novaOpcao.text = listaEsquerda.options[i].text;            
             listaDireita.add(novaOpcao);
 
             // Remove a opção da lista da esquerda
