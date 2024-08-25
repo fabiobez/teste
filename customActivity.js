@@ -71,7 +71,7 @@ define(["postmonger"], function (Postmonger) {
             var message;
             if($("#listaDireita").find('option:selected').length > 0){
               message = "SIM";
-
+              connection.trigger("updateButton", { button: "next", enabled: false });
             } else {
               message = "NÃO";
             }
