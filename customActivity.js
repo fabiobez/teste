@@ -165,10 +165,14 @@ define(["postmonger"], function (Postmonger) {
 
   });
 
-  // Renderiza tela de resumo  
-  $("#alldefinitions").html('<h3>Definições de Enviar para API</h3><strong>Atributos</strong>:<br / >' 
-    + listaDireita + '<br /> <strong>Endpoint  de destino:</strong> ' 
-    + endpoint + '<br /> Após conferir todas as informações clique em Salvar'); 
+  // Renderiza tela de resumo
+  $('#alldefinitions').html(`
+    <h3>Definições de Enviar para API</h3>
+    <strong>Atributos</strong>:<br />
+    ${listaDireita}<br />
+    <strong>Endpoint de destino:</strong> ${endpoint}<br />
+    Após conferir todas as informações clique em Salvar
+`);
   
 
   function validarUrl(url) {
