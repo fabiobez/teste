@@ -19,21 +19,31 @@ define(["postmonger"], function (Postmonger) {
     connection.on("gotoStep", onGotoStep); 
     
     function onRender() {
-        connection.trigger('ready');
-        var attribdefined = document.getElementById("listaDireita");
-        if(attribdefined != null){
-          console.log('dados selecionados');
-        }
-
-        
-
-        /*$('#select1').change(function() {
-            var name = $('#select1').find('option:selected').html();
-            console.log('PNR Field selected : ', name);
-            connection.trigger("updateButton", {
-              button: "next",
-              enabled: Boolean(message),
-        });*/      
+        // JB will respond the first time 'ready' is called with 'initActivity'
+      connection.trigger("ready");
+  
+      connection.trigger("requestTokens");
+      connection.trigger("requestEndpoints");
+  
+      // Disable the next button if a value isn't selected
+      $("#select1").change(function () {
+        var message = getMessage();
+        connection.trigger("updateButton", {
+          button: "next",
+          enabled: Boolean(message),
+        });
+  
+        $("#message").html(message);
+      });
+  
+      // Toggle step 4 active/inactive
+      // If inactive, wizard hides it and skips over it during navigation
+      $("#toggleLastStep").click(function () {
+        lastStepEnabled = !lastStepEnabled; // toggle status
+        steps[3].active = !steps[3].active; // toggle active
+  
+        connection.trigger("updateSteps", steps);
+      });     
     }
     
 
@@ -143,6 +153,10 @@ define(["postmonger"], function (Postmonger) {
               });
             break;
         }
+    }
+
+    function getMessage() {
+      return $("#select1").find("option:selected").attr("value").trim();
     }
     
     function save() {
