@@ -27,9 +27,8 @@ define(["postmonger"], function (Postmonger) {
             connection.trigger("updateButton", {
               button: "next",
               enabled: Boolean(message),
-            }
         });
-
+      }
     }
 
     function initialize(data) {
