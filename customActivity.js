@@ -24,6 +24,10 @@ define(["postmonger"], function (Postmonger) {
         $('#select1').change(function() {
             var name = $('#select1').find('option:selected').html();
             console.log('PNR Field selected : ', name);
+            connection.trigger("updateButton", {
+              button: "next",
+              enabled: Boolean(message),
+            }
         });
 
     }
