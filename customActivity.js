@@ -165,6 +165,11 @@ define(["postmonger"], function (Postmonger) {
 
   });
 
+  $("#alldefinitions").on("click", function () {
+    $("#endpointvalidator").html('Resumo');
+  });
+  
+
   function validarUrl(url) {
     // Expressão regular para validar URLs (simplificada)
     const regex = /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/gi;
@@ -248,19 +253,7 @@ define(["postmonger"], function (Postmonger) {
     }
   }
 
-  function atualizarDivMensagem() {
-    const listaDireita = document.getElementById('listaDireita');
-    const divMensagem = document.getElementById('mensagem'); // Adiciona um elemento div com id "mensagem"
-    let mensagem = "";
-
-    for (let i = 0; i < listaDireita.options.length; i++) {
-      if (listaDireita.options[i].selected) {
-        mensagem += listaDireita.options[i].text + ", ";
-      }
-    }
-
-    divMensagem.textContent = mensagem.slice(0, -2); // Remove a última vírgula e espaço
-  }
+  
 
   function getMessage() {
     return $("#listaDireita").find('option').length > 0;
