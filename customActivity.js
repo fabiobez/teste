@@ -40,7 +40,7 @@ define(["postmonger"], function (Postmonger) {
             console.log(schema);
             var x;
                 
-            /*for (var i = 0, l = schema.length; i < l; i++) {
+            for (var i = 0, l = schema.length; i < l; i++) {
                 let attr = schema[i].key;
                 console.log(x = '<option id="' + schema[i].key + '">' + schema[i].name + '</option>');
                 // populate select dropdown 
@@ -50,11 +50,11 @@ define(["postmonger"], function (Postmonger) {
     
                 $('#idField').append(option);
     
-            }*/
-            for (var i = 0, l = schema.length; i < l; i++) {
+            }
+            /*for (var i = 0, l = schema.length; i < l; i++) {
                 x = '<option id="' + schema[i].key + '">' + schema[i].name + '</option>'
                 $('#idField').append(x);
-            }
+            }*/
 
         });
     } 
