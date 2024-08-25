@@ -33,6 +33,19 @@ define(["postmonger"], function (Postmonger) {
       
             $("#message").html(message);
           });   
+
+          // Disable the next button if a value isn't selected
+          $("#listaDireita").change(function() {   
+            var message = getMessage();
+            console.log('MESSAGE:' + message);         
+            connection.trigger("updateButton", {
+              button: "next",
+              enabled: Boolean(message),
+            });
+      
+            $("#message").html(message);
+          });  
+ 
     }
     
 
