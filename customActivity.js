@@ -134,7 +134,8 @@ define(["postmonger"], function (Postmonger) {
               i--;
           }
       }
-    }
+    });
+    
     
     function onClickedNext() {
         var listaEsquerda = $('#listaEsquerda').find('option:selected').html();
