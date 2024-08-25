@@ -63,7 +63,7 @@ define(["postmonger"], function (Postmonger) {
                     .attr('id', schema[i].key)
                     .text(schema[i].name);
     
-                $('#idField').append(option);
+                $('#listaEsquerda').append(option);
     
             }
 
@@ -71,9 +71,9 @@ define(["postmonger"], function (Postmonger) {
     } 
     
     function onClickedNext() {
-        var idField = $('#idField').find('option:selected').html();
+        var listaEsquerda = $('#listaEsquerda').find('option:selected').html();
         payload['arguments'].execute.inArguments.push({
-            idField: idField
+          listaEsquerda: listaEsquerda
         })
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);
