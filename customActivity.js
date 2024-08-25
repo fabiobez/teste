@@ -20,6 +20,12 @@ define(["postmonger"], function (Postmonger) {
     
     function onRender() {
         connection.trigger('ready');
+        var attribdefined = document.getElementById("listaDireita");
+        if(attribdefined != null){
+          console.log('dados selecionados');
+        }
+
+        
 
         /*$('#select1').change(function() {
             var name = $('#select1').find('option:selected').html();
