@@ -68,6 +68,13 @@ define(["postmonger"], function (Postmonger) {
                 $('#listaEsquerda').append(option);
     
             }
+            var message;
+            if($("#listaDireita").find('option:selected').length > 0){
+              message = "SIM";
+
+            } else {
+              message = "NÃO";
+            }
 
         });
     } 
