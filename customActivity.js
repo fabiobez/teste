@@ -110,7 +110,7 @@ define(["postmonger"], function (Postmonger) {
     }
 
     definedAttributesDiv.appendChild(listaNaoOrdenada);
-    
+
     // Habilita/Desabilita botão next
     var message = getMessage();
     connection.trigger("updateButton", {
@@ -175,6 +175,13 @@ define(["postmonger"], function (Postmonger) {
       });
     }
 
+  });
+
+  $("#savealldefinitions").on("click", function () {
+    connection.trigger("updateButton", {
+      button: "next",
+      enabled: true,
+    });
   });
 
 
