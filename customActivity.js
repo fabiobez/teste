@@ -113,7 +113,7 @@ define(["postmonger"], function (Postmonger) {
               i--;
           }
       }
-    } );
+    });
 
     $( "#moveleft" ).on( "click", function() {
       const listaEsquerda = document.getElementById('listaEsquerda');
