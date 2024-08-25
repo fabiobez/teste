@@ -1,5 +1,5 @@
 function moverParaDireita() {
-    const listaEsquerda = document.getElementById('idField');
+    const listaEsquerda = document.getElementById('listaEsquerda');
     const listaDireita = document.getElementById('listaDireita');
 
     // Percorre todas as opções selecionadas na lista da esquerda
@@ -20,7 +20,7 @@ function moverParaDireita() {
 }
 
 function moverParaEsquerda() {
-    const listaEsquerda = document.getElementById('idField');
+    const listaEsquerda = document.getElementById('listaEsquerda');
     const listaDireita = document.getElementById('listaDireita');
 
     // Percorre todas as opções selecionadas na lista da esquerda
