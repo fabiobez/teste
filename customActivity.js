@@ -149,8 +149,7 @@ define(["postmonger"], function (Postmonger) {
     endpointUrl = document.getElementById('endpointUrl').value;
     if (validarUrl(endpointUrl)) {
       console.log('A URL é válida');
-      $("#endpointvalidator").html(null);
-      endpoint = endpointUrl;
+      $("#endpointvalidator").html(null);      
       connection.trigger("updateButton", {
         button: "next",
         enabled: true,
