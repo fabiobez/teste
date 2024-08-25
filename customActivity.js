@@ -117,16 +117,16 @@ define(["postmonger"], function (Postmonger) {
     const listaEsquerda = document.getElementById('listaEsquerda');
     const listaDireita = document.getElementById('listaDireita');
 
-    // Percorre todas as opções selecionadas na lista da esquerda
+    // Percorre todas as opções selecionadas na lista da listaDireita
     for (let i = 0; i < listaDireita.options.length; i++) {
       if (listaDireita.options[i].selected) {
-        // Cria uma nova opção na lista da direita com o mesmo valor e texto
+        // Cria uma nova opção na listaEsquerda com o mesmo valor e texto
         const novaOpcao = document.createElement('option');
         novaOpcao.value = listaDireita.options[i].value;
         novaOpcao.text = listaDireita.options[i].text;
         listaEsquerda.add(novaOpcao);
 
-        // Remove a opção da lista da esquerda
+        // Remove a opção da listaDireita
         listaDireita.remove(i);
         // Ajusta o índice para não pular elementos após a remoção
         i--;
@@ -166,22 +166,24 @@ define(["postmonger"], function (Postmonger) {
 
   });
 
-  $("#savealldefinitios").on("click", function () {
+  // DEFINE TELA DE RESUMO 
+
+  $(document).ready(function () {
+    let meuArray = ["item1", "item2", "item3"];
+    let resultado = $('#definedAttributes');
+
+    $.each(listaDireita, function (index, value) {
+      resultado.append('<p>' + value + '</p>');
+    });
+  });
+
+  $("#definedEndpoint").html(endpoint);
+
+  $("#savealldefinitions").on("click", function () {
     connection.trigger("updateButton", {
       button: "next",
       enabled: true,
     });
-
-    var listaDireita = $('#listaDireita').find('option').html();
-
-    // Renderiza tela de resumo
-    $('#alldefinitions').html(`
-    <h3>Definições de Enviar para API</h3>
-    <strong>Atributos</strong>:<br />
-    ${listaDireita}<br />
-    <strong>Endpoint de destino:</strong> ${endpoint}<br />
-    Após conferir todas as informações clique em Salvar
-`);
 
   });
 
