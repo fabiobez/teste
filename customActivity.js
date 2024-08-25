@@ -168,7 +168,7 @@ define(["postmonger"], function (Postmonger) {
 
   // DEFINE TELA DE RESUMO 
 
-  $(document).ready(function () {
+  $("#step3").ready(function () {
     let meuArray = ["item1", "item2", "item3"];
     let resultado = $('#definedAttributes');
 
