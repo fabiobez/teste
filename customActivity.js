@@ -85,16 +85,23 @@ define(["postmonger"], function (Postmonger) {
   $("#moveright").on("click", function () {
     const listaEsquerda = document.getElementById('listaEsquerda');
     const listaDireita = document.getElementById('listaDireita');
+    const definedAttributesDiv = document.getElementById('definedAttributes');
+    const listaNaoOrdenada = document.createElement('ul');
 
     // Percorre todas as opções selecionadas na lista da esquerda
     for (let i = 0; i < listaEsquerda.options.length; i++) {
       if (listaEsquerda.options[i].selected) {
         // Cria uma nova opção na lista da direita com o mesmo valor e texto
         const novaOpcao = document.createElement('option');
+        const novoItemLista = document.createElement('li');
+
         novaOpcao.value = listaEsquerda.options[i].value;
         novaOpcao.text = listaEsquerda.options[i].text;
-        listaDireita.add(novaOpcao);
+        novoItemLista.textContent = listaEsquerda.options[i].text;
 
+        listaNaoOrdenada.appendChild(novoItemLista);
+        listaDireita.add(novaOpcao);
+        
         // Remove a opção da lista da esquerda
         listaEsquerda.remove(i);
         // Ajusta o índice para não pular elementos após a remoção
@@ -166,12 +173,6 @@ define(["postmonger"], function (Postmonger) {
     }
 
   });
-
-  // DEFINE TELA DE RESUMO 
-
-  console.log('LISTA DIREITA: ' + listaDireita.options);
-  console.log('ENDPOINT: ' + endpointUrl);
-
 
 
   function validarUrl(url) {
