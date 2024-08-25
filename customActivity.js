@@ -166,6 +166,13 @@ define(["postmonger"], function (Postmonger) {
 
   });
 
+  $("#savealldefinitios").on("click", function () {
+    connection.trigger("updateButton", {
+      button: "next",
+      enabled: true,
+    });
+  });
+
   // Renderiza tela de resumo
   $('#alldefinitions').html(`
     <h3>Definições de Enviar para API</h3>
