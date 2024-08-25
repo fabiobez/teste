@@ -230,7 +230,7 @@ define(["postmonger"], function (Postmonger) {
         connection.trigger("updateButton", {
           button: "next",
           text: "next",
-          visible: true,
+          visible: false,
         });
         break;
       case "step3":
