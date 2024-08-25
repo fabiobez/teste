@@ -2,6 +2,7 @@ define(["postmonger"], function (Postmonger) {
   "use strict";
 
   var connection = new Postmonger.Session();
+  var endpoint;
   var payload = {};
   var steps = [
     // initialize to the same value as what's set in config.json for consistency
@@ -149,7 +150,7 @@ define(["postmonger"], function (Postmonger) {
     if (validarUrl(endpointUrl)) {
       console.log('A URL é válida');
       $("#endpointvalidator").html(null);
-      var endpoint = endpointUrl;
+      endpoint = endpointUrl;
       connection.trigger("updateButton", {
         button: "next",
         enabled: true,
@@ -169,8 +170,8 @@ define(["postmonger"], function (Postmonger) {
   $('#alldefinitions').html(`
     <h3>Definições de Enviar para API</h3>
     <strong>Atributos</strong>:<br />
-    <br />
-    <strong>Endpoint de destino:</strong> <br />
+    ${listaDireita}<br />
+    <strong>Endpoint de destino:</strong> ${endpoint}<br />
     Após conferir todas as informações clique em Salvar
 `);
   
