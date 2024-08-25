@@ -21,15 +21,15 @@ define(["postmonger"], function (Postmonger) {
     function onRender() {
         connection.trigger('ready');
 
-        $('#select1').change(function() {
+        /*$('#select1').change(function() {
             var name = $('#select1').find('option:selected').html();
             console.log('PNR Field selected : ', name);
             connection.trigger("updateButton", {
               button: "next",
               enabled: Boolean(message),
-        });
-      }
+        });*/      
     }
+    
 
     function initialize(data) {
         $('#step1').show();
