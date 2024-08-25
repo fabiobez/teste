@@ -146,6 +146,30 @@ define(["postmonger"], function (Postmonger) {
   });
 
 
+  
+  $("#saveendpoint").on("click", function () {
+
+    
+const endpointUrl = document.getElementById('endpointUrl').value;
+if (validarUrl(endpointUrl)) {
+    console.log('A URL é válida');
+    var endpoint = endpointUrl;
+} else {
+    console.log('A URL é inválida');
+    var endpointvalidator = document.getElementById('endpointUrl').value = "Erro";
+}
+
+  });
+
+  function validarUrl(url) {
+    // Expressão regular para validar URLs (simplificada)
+    const regex = /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/gi;
+    return regex.test(url);
+  }
+
+
+
+
   function onClickedNext() {
     /*var listaEsquerda = $('#listaEsquerda').find('option:selected').html();
     payload['arguments'].execute.inArguments.push({
