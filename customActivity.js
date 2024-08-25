@@ -23,18 +23,6 @@ define(["postmonger"], function (Postmonger) {
       connection.trigger("ready");  
       
           // Disable the next button if a value isn't selected
-          $("#listaEsquerda").change(function() {   
-            var message = getMessage();
-            console.log('MESSAGE:' + message);         
-            connection.trigger("updateButton", {
-              button: "next",
-              enabled: Boolean(message),
-            });
-      
-            $("#message").html(message);
-          });   
-
-          // Disable the next button if a value isn't selected
           $("#listaDireita").change(function() {   
             var message = getMessage();
             console.log('MESSAGE:' + message);         
@@ -44,7 +32,7 @@ define(["postmonger"], function (Postmonger) {
             });
       
             $("#message").html(message);
-          });  
+          });   
  
     }
     
