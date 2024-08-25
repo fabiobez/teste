@@ -168,8 +168,10 @@ define(["postmonger"], function (Postmonger) {
 
   // DEFINE TELA DE RESUMO 
 
-  $("#step3").ready(function () {
-    let meuArray = ["item1", "item2", "item3"];
+  console.log(endpoint);
+  console.log(listaDireita);
+
+  $("#step3").ready(function () {    
     let resultado = $('#definedAttributes');
 
     $.each(listaDireita, function (index, value) {
