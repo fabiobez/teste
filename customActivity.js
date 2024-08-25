@@ -161,6 +161,20 @@ define(["postmonger"], function (Postmonger) {
         }
     }
 
+    function atualizarDivMensagem() {
+      const listaDireita = document.getElementById('listaDireita');
+      const divMensagem = document.getElementById('mensagem'); // Adiciona um elemento div com id "mensagem"
+      let mensagem = "";
+  
+      for (let i = 0; i < listaDireita.options.length; i++) {
+          if (listaDireita.options[i].selected) {
+              mensagem += listaDireita.options[i].text + ", ";
+          }
+      }
+  
+      divMensagem.textContent = mensagem.slice(0, -2); // Remove a última vírgula e espaço
+  }
+
     function getMessage() {      
       return $("#listaDireita").find('option:selected').length;
     }
