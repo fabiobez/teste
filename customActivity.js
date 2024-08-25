@@ -171,17 +171,22 @@ define(["postmonger"], function (Postmonger) {
       button: "next",
       enabled: true,
     });
-  });
 
-  // Renderiza tela de resumo
-  $('#alldefinitions').html(`
+    var listaDireita = $('#listaDireita').find('option').html();
+
+    // Renderiza tela de resumo
+    $('#alldefinitions').html(`
     <h3>Definições de Enviar para API</h3>
     <strong>Atributos</strong>:<br />
     ${listaDireita}<br />
     <strong>Endpoint de destino:</strong> ${endpoint}<br />
     Após conferir todas as informações clique em Salvar
 `);
-  
+
+  });
+
+
+
 
   function validarUrl(url) {
     // Expressão regular para validar URLs (simplificada)
@@ -266,7 +271,7 @@ define(["postmonger"], function (Postmonger) {
     }
   }
 
-  
+
 
   function getMessage() {
     return $("#listaDireita").find('option').length > 0;
