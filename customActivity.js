@@ -23,8 +23,7 @@ define(["postmonger"], function (Postmonger) {
       connection.trigger("ready");  
       
           // Disable the next button if a value isn't selected
-          $("#select1").change(function () {
-            var message = getMessage();
+          $("#listaEsquerda").change(function () {            
             connection.trigger("updateButton", {
               button: "next",
               enabled: Boolean(message),
@@ -40,12 +39,43 @@ define(["postmonger"], function (Postmonger) {
         if (data) {
             payload = data;
         }
-    
+
+        var message;
+      var hasInArguments = Boolean(
+        payload["arguments"] &&
+          payload["arguments"].execute &&
+          payload["arguments"].execute.inArguments &&
+          payload["arguments"].execute.inArguments.length > 0
+      );
+  
+      var inArguments = hasInArguments
+        ? payload["arguments"].execute.inArguments
+        : {};
+  
+      $.each(inArguments, function (index, inArgument) {
+        $.each(inArgument, function (key, val) {
+          if (key === "message") {
+            message = val;
+          }
+        });
+      });
+  
+      // If there is no message selected, disable the next button
+      if (!message) {
+        showStep(null, 1);
+        connection.trigger("updateButton", { button: "next", enabled: false });
+        // If there is a message, skip to the summary step
+      } else {
+        $("#listaEsquerda")
+          .find("option[value=" + message + "]")
+          .attr("selected", "selected");
+        $("#message").html(message);
+        showStep(null, 3);
+      }    
+        
         connection.trigger('requestSchema');
         connection.on('requestedSchema', function(data) {
             const schema = data['schema'];
-            console.log(schema);
-            var x;
                 
             for (var i = 0, l = schema.length; i < l; i++) {
                 let attr = schema[i].key;                
@@ -54,28 +84,11 @@ define(["postmonger"], function (Postmonger) {
                     .attr('id', schema[i].key)
                     .text(schema[i].name);
     
-                $('#listaEsquerda').append(option);
-    
+                $('#listaEsquerda').append(option);    
             }
 
         });
-
-        var alldefinitions;
-
-        if (alldefinitions == null) {
-          showStep(null, 1);
-          connection.trigger("updateButton", { button: "next", enabled: false });
-          // If there is a message, skip to the summary step
-        }
         
-        if (alldefinitions == "endpoint") {
-          showStep(null, 2);
-          connection.trigger("updateButton", { button: "next", enabled: false });
-        }
-
-        if (alldefinitions == "finish") {
-          showStep(null, 3);          
-        }
     } 
     
     function onClickedNext() {
@@ -170,7 +183,7 @@ define(["postmonger"], function (Postmonger) {
   }
 
     function getMessage() {      
-      return $("#listaDireita").find('option:selected').length;
+      return $("#listaDireita").find('option:selected').length > 0;
     }
     
     function save() {
