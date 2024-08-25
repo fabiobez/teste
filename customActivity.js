@@ -20,13 +20,10 @@ define(["postmonger"], function (Postmonger) {
     
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
-      connection.trigger("ready");
-  
-      connection.trigger("requestTokens");
-      connection.trigger("requestEndpoints");
+      connection.trigger("ready");  
   
       // Disable the next button if a value isn't selected
-      $("#select1").change(function () {
+      $("#listadireita").change(function () {
         var message = getMessage();
         connection.trigger("updateButton", {
           button: "next",
@@ -60,8 +57,7 @@ define(["postmonger"], function (Postmonger) {
             var x;
                 
             for (var i = 0, l = schema.length; i < l; i++) {
-                let attr = schema[i].key;
-                console.log(x = '<option id="' + schema[i].key + '">' + schema[i].name + '</option>');
+                let attr = schema[i].key;                
                 // populate select dropdown 
                 let option = $('<option></option>')
                     .attr('id', schema[i].key)
@@ -70,10 +66,6 @@ define(["postmonger"], function (Postmonger) {
                 $('#idField').append(option);
     
             }
-            /*for (var i = 0, l = schema.length; i < l; i++) {
-                x = '<option id="' + schema[i].key + '">' + schema[i].name + '</option>'
-                $('#idField').append(x);
-            }*/
 
         });
     } 
