@@ -147,8 +147,8 @@ define(["postmonger"], function (Postmonger) {
         }
     }
 
-    function getMessage() {
-      return $("#listaDireita").find("option:selected").attr("value");
+    function getMessage() {      
+      return $("#listaDireita").find('option:selected').length;
     }
     
     function save() {
