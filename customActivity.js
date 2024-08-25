@@ -1,7 +1,8 @@
 define(["postmonger"], function (Postmonger) {
   "use strict";
 
-  var connection = new Postmonger.Session();  
+  var connection = new Postmonger.Session();
+  var endpointUrl;  
   var payload = {};
   var steps = [
     // initialize to the same value as what's set in config.json for consistency
