@@ -166,7 +166,7 @@ define(["postmonger"], function (Postmonger) {
   });
 
   $("#alldefinitions").on("click", function () {
-    $("#endpointvalidator").html('Resumo');
+    $("#alldefinitions").html('Resumo');
   });
   
 
