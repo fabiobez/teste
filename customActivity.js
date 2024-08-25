@@ -47,7 +47,9 @@ define(["postmonger"], function (Postmonger) {
     
 
     function initialize(data) {
-        $('#step1').show();        
+        $('#step1').show();
+        $('#step2').show();
+        $('#step3').show();        
         if (data) {
             payload = data;
         }
