@@ -15,7 +15,8 @@ define(["postmonger"], function (Postmonger) {
 
     connection.on("initActivity", initialize); 
     connection.on("clickedNext", onClickedNext);
-    connection.on("clickedBack", onClickedBack); 
+    connection.on("clickedBack", onClickedBack);
+    connection.on("gotoStep", onGotoStep); 
     
     function onRender() {
         connection.trigger('ready');
