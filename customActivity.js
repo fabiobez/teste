@@ -71,12 +71,21 @@ define(["postmonger"], function (Postmonger) {
 
         });
 
+        var alldefinitions;
+
         if (alldefinitions == null) {
           showStep(null, 1);
           connection.trigger("updateButton", { button: "next", enabled: false });
           // If there is a message, skip to the summary step
-        } else {
+        }
+        
+        if (alldefinitions == "endpoint") {
           showStep(null, 2);
+          connection.trigger("updateButton", { button: "next", enabled: false });
+        }
+
+        if (alldefinitions == "finish") {
+          showStep(null, 3);          
         }
     } 
     
