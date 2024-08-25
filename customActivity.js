@@ -71,7 +71,7 @@ define(["postmonger"], function (Postmonger) {
 
         });
 
-        if (!alldefinitions) {
+        if (alldefinitions == null) {
           showStep(null, 1);
           connection.trigger("updateButton", { button: "next", enabled: false });
           // If there is a message, skip to the summary step
