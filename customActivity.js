@@ -47,9 +47,7 @@ define(["postmonger"], function (Postmonger) {
     
 
     function initialize(data) {
-        $('#step1').show();
-        $('#step2').show();
-        $('#step3').show();        
+        
         if (data) {
             payload = data;
         }
@@ -70,20 +68,16 @@ define(["postmonger"], function (Postmonger) {
                 $('#listaEsquerda').append(option);
     
             }
-            var message;
-            $('#listaDireita').on('change', function() {
-              var valoresSelecionados = $(this).val();
-              $('#message').text(valoresSelecionados.join(', ') || 'Nenhum item selecionado');
-          });
-
-            if($("#listaDireita").find('option:selected').length > 0){
-              message = "SIM";
-              connection.trigger("updateButton", { button: "next", enabled: false });
-            } else {
-              message = "NÃO";
-            }
 
         });
+
+        if (!alldefinitions) {
+          showStep(null, 1);
+          connection.trigger("updateButton", { button: "next", enabled: false });
+          // If there is a message, skip to the summary step
+        } else {
+          showStep(null, 2);
+        }
     } 
     
     function onClickedNext() {
