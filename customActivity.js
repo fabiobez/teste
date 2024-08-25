@@ -23,7 +23,7 @@ define(["postmonger"], function (Postmonger) {
       connection.trigger("ready");  
       
           // Disable the next button if a value isn't selected
-          $("#listaEsquerda, #listaDireita").change(function() {   
+          $("#listaEsquerda").change(function() {   
             var message = getMessage();
             console.log('MESSAGE:' + message);         
             connection.trigger("updateButton", {
