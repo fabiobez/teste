@@ -1,8 +1,7 @@
 define(["postmonger"], function (Postmonger) {
   "use strict";
 
-  var connection = new Postmonger.Session();
-  var endpoint;
+  var connection = new Postmonger.Session();  
   var payload = {};
   var steps = [
     // initialize to the same value as what's set in config.json for consistency
@@ -146,7 +145,7 @@ define(["postmonger"], function (Postmonger) {
 
   $("#saveendpoint").on("click", function () {
 
-    const endpointUrl = document.getElementById('endpointUrl').value;
+    endpointUrl = document.getElementById('endpointUrl').value;
     if (validarUrl(endpointUrl)) {
       console.log('A URL é válida');
       $("#endpointvalidator").html(null);
@@ -169,7 +168,7 @@ define(["postmonger"], function (Postmonger) {
   // DEFINE TELA DE RESUMO 
 
   console.log('LISTA DIREITA: ' + listaDireita.options);
-  console.log('ENDPOINT: ' + endpoint);
+  console.log('ENDPOINT: ' + endpointUrl);
 
 
 
