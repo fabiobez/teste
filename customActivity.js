@@ -114,8 +114,8 @@ define(["postmonger"], function (Postmonger) {
           }
       }
     } );
-  
-  function moverParaEsquerda() {
+
+    $( "#moveleft" ).on( "click", function() {
       const listaEsquerda = document.getElementById('listaEsquerda');
       const listaDireita = document.getElementById('listaDireita');
   
@@ -134,8 +134,7 @@ define(["postmonger"], function (Postmonger) {
               i--;
           }
       }
-  
-  }
+    }
     
     function onClickedNext() {
         var listaEsquerda = $('#listaEsquerda').find('option:selected').html();
