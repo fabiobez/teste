@@ -165,7 +165,7 @@ define(["postmonger"], function (Postmonger) {
 
   });
 
-    
+  // Renderiza tela de resumo  
   $("#alldefinitions").html('Resumo'); 
   
 
