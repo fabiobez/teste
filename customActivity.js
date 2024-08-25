@@ -66,6 +66,15 @@ define(["postmonger"], function (Postmonger) {
         })
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);
+
+        if (
+          (currentStep.key === "step2" && steps[2].active === false) ||
+          currentStep.key === "step3"
+        ) {
+          save();
+        } else {
+          connection.trigger("nextStep");
+        }
     
     } 
     
