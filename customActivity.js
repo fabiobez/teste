@@ -168,18 +168,19 @@ define(["postmonger"], function (Postmonger) {
 
   // DEFINE TELA DE RESUMO 
 
-  console.log(endpoint);
-  console.log(listaDireita);
+  console.log('LISTA DIREITA: ' + listaDireita.options);
+  console.log('ENDPOINT: ' + endpointUrl);
+  
 
   $("#step3").ready(function () {    
     let resultado = $('#definedAttributes');
 
-    $.each(listaDireita, function (index, value) {
+    $.each(listaDireita.options, function (index, value) {
       resultado.append('<p>' + value + '</p>');
     });
   });
 
-  $("#definedEndpoint").html(endpoint);
+  $("#definedEndpoint").html(endpointUrl);
 
   $("#savealldefinitions").on("click", function () {
     connection.trigger("updateButton", {
