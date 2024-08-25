@@ -6,7 +6,7 @@ function moverParaDireita() {
     for (let i = 0; i < listaEsquerda.options.length; i++) {
         if (listaEsquerda.options[i].selected) {
             // Cria uma nova opção na lista da direita com o mesmo valor e texto
-            const novaOpcao = document.createElement('option');
+            const novaOpcao = document.createElement('option').attr('selected', true).appendTo("#listaDireita");
             novaOpcao.value = listaEsquerda.options[i].value;
             novaOpcao.text = listaEsquerda.options[i].text;
             listaDireita.add(novaOpcao);
