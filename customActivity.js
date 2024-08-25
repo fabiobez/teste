@@ -198,7 +198,7 @@ define(["postmonger"], function (Postmonger) {
   }
 
     function getMessage() {      
-      return $("#listaDireita").find('option').length > 0;
+      return $("#listaDireita").change('option').length > 0;
     }
     
     function save() {
