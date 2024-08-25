@@ -155,8 +155,8 @@ define(["postmonger"], function (Postmonger) {
     connection.trigger('updateActivity', payload);
 
     if (
-      (currentStep.key === "step2" && steps[2].active === false) ||
-      currentStep.key === "step3"
+      (currentStep.key === "step1" && steps[1].active === false) ||
+      currentStep.key === "step2"
     ) {
       save();
     } else {
@@ -175,7 +175,6 @@ define(["postmonger"], function (Postmonger) {
   }
 
   function showStep(step, stepIndex) {
-
     if (stepIndex && !step) {
       step = steps[stepIndex - 1];
     }
@@ -214,11 +213,22 @@ define(["postmonger"], function (Postmonger) {
           button: "back",
           visible: true,
         });
-        connection.trigger("updateButton", {
-          button: "next",
-          text: "done",
-          visible: true,
-        });
+        if (lastStepEnabled) {
+          connection.trigger("updateButton", {
+            button: "next",
+            text: "next",
+            visible: true,
+          });
+        } else {
+          connection.trigger("updateButton", {
+            button: "next",
+            text: "done",
+            visible: true,
+          });
+        }
+        break;
+      case "step4":
+        $("#step4").show();
         break;
     }
   }
