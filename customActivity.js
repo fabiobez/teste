@@ -113,7 +113,7 @@ define(["postmonger"], function (Postmonger) {
               i--;
           }
       }
-        
+        // Habilita/Desabilita botão next
         var message = getMessage();
         console.log('MESSAGE:' + message);         
         connection.trigger("updateButton", {
@@ -145,6 +145,17 @@ define(["postmonger"], function (Postmonger) {
               i--;
           }
       }
+
+              // Habilita/Desabilita botão next
+              var message = getMessage();
+              console.log('MESSAGE:' + message);         
+              connection.trigger("updateButton", {
+                button: "next",
+                enabled: Boolean(message),
+              });
+        
+              $("#message").html(message);
+              
     });
     
     
