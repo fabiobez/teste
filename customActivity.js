@@ -147,6 +147,7 @@ define(["postmonger"], function (Postmonger) {
   $("#saveendpoint").on("click", function () {
 
     endpointUrl = document.getElementById('endpointUrl').value;
+    $("#definedEndpoint").html(endpointUrl);
     console.log(endpointUrl);
     if (validarUrl(endpointUrl)) {
       console.log('A URL é válida');
