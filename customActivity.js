@@ -169,27 +169,7 @@ define(["postmonger"], function (Postmonger) {
   // DEFINE TELA DE RESUMO 
 
   console.log('LISTA DIREITA: ' + listaDireita.options);
-  console.log('ENDPOINT: ' + endpointUrl);
-  
-
-  $("#step3").ready(function () {    
-    let resultado = $('#definedAttributes');
-
-    $.each(listaDireita.options, function (index, value) {
-      resultado.append('<p>' + value + '</p>');
-    });
-  });
-
-  $("#definedEndpoint").html(endpointUrl);
-
-  $("#savealldefinitions").on("click", function () {
-    connection.trigger("updateButton", {
-      button: "next",
-      enabled: true,
-    });
-
-  });
-
+  console.log('ENDPOINT: ' + endpoint);
 
 
 
