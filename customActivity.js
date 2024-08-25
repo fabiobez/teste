@@ -165,9 +165,8 @@ define(["postmonger"], function (Postmonger) {
 
   });
 
-  $("#alldefinitions").on("click", function () {
-    $("#alldefinitions").html('Resumo');
-  });
+    
+  $("#alldefinitions").html('Resumo'); 
   
 
   function validarUrl(url) {
@@ -247,7 +246,7 @@ define(["postmonger"], function (Postmonger) {
         connection.trigger("updateButton", {
           button: "next",
           text: "done",
-          visible: true,
+          enabled: false,
         });
         break;
     }
