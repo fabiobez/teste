@@ -94,6 +94,10 @@ define(["postmonger"], function (Postmonger) {
         
     } 
 
+    $( "#moveright" ).on( "click", function() {
+      alert( "Handler for `click` called." );
+    } );
+
     function moverParaDireita() {
       const listaEsquerda = document.getElementById('listaEsquerda');
       const listaDireita = document.getElementById('listaDireita');
