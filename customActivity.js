@@ -147,16 +147,21 @@ define(["postmonger"], function (Postmonger) {
 
 
   function onClickedNext() {
-    var listaEsquerda = $('#listaEsquerda').find('option:selected').html();
+    /*var listaEsquerda = $('#listaEsquerda').find('option:selected').html();
     payload['arguments'].execute.inArguments.push({
       listaEsquerda: listaEsquerda
     })
     payload['metaData'].isConfigured = true;
     connection.trigger('updateActivity', payload);
-
+*/
     if (
+<<<<<<< HEAD
+      (currentStep.key === "step3" && steps[3].active === false) ||
+      currentStep.key === "step4"
+=======
       (currentStep.key === "step1" && steps[1].active === false) ||
       currentStep.key === "step2"
+>>>>>>> 7ca85f224f0fc3d3fd2523a349d7ca18be2c27e1
     ) {
       save();
     } else {
