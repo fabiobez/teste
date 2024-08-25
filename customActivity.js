@@ -22,27 +22,16 @@ define(["postmonger"], function (Postmonger) {
         // JB will respond the first time 'ready' is called with 'initActivity'
       connection.trigger("ready");  
       
-      // Disable the next button if a value isn't selected
-      $("#listaDireita").change(function () {
-        console.log('RETORNO' + getMessage());
-        if(getMessage() > 0){
-        connection.trigger("updateButton", {
-          button: "next",
-          enabled: true,
-        });
-      }
-        console.log(message);
-        $("#message").html(message);
-      });
-  
+          // Disable the next button if a value isn't selected
+          $("#select1").change(function () {
+            var message = getMessage();
+            connection.trigger("updateButton", {
+              button: "next",
+              enabled: Boolean(message),
+            });
       
-      // If inactive, wizard hides it and skips over it during navigation
-      $("#toggleLastStep").click(function () {
-        lastStepEnabled = !lastStepEnabled; // toggle status
-        steps[3].active = !steps[3].active; // toggle active
-  
-        connection.trigger("updateSteps", steps);
-      });     
+            $("#message").html(message);
+          });   
     }
     
 
