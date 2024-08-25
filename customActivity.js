@@ -21,7 +21,7 @@ define(["postmonger"], function (Postmonger) {
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
       connection.trigger("ready");  
-      
+      /*
           // Disable the next button if a value isn't selected
           $("#listaDireita").change(function() {   
             var message = getMessage();
@@ -33,7 +33,7 @@ define(["postmonger"], function (Postmonger) {
       
             $("#message").html(message);
           });   
- 
+ */
     }
     
 
