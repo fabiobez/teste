@@ -184,6 +184,15 @@ define(["postmonger"], function (Postmonger) {
     });
   });
 
+  $('#endpointUrl').on('input', function() {
+    if ($(this).val()) {
+      $('#clientId').prop('disabled', true);
+      $('#clientSecret').prop('disabled', true);
+    } else {
+      $('#clientId').prop('disabled', false);
+      $('#clientSecret').prop('disabled', false);
+    }
+  });
 
   function validarUrl(url) {
     // Expressão regular para validar URLs (simplificada)
